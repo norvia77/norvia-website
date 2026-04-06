@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Über uns – Norvia Solutions</title>
+<meta name="description" content="Norvia Solutions ist eine spezialisierte IT-Personalberatung mit Fokus auf Cyber Security, IT/DevOps und SAP in Deutschland – remote, transparent und partnerschaftlich.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e1624;--navy2:#162033;--blue:#1a56db;--blue-light:#e8f0fe;
+  --off:#f7f7f5;--white:#ffffff;--text:#0e1624;--muted:#5a6478;
+  --border:#e2e6ef;--radius:10px;
+  --font-head:'Fraunces',Georgia,serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,22,36,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-head);font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:-0.01em}
+.nav-logo span{color:#5b8ff9}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.7);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--blue);color:#fff !important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:500 !important;font-size:0.875rem;transition:background .2s !important}
+.nav-cta:hover{background:#1447c0 !important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem;z-index:99;border-bottom:1px solid rgba(255,255,255,0.1)}
+.mobile-menu a{display:block;padding:.75rem 0;font-size:1rem;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.07)}
+.mobile-menu a:last-child{border-bottom:none;margin-top:.5rem;color:#5b8ff9;font-weight:500}
+.mobile-menu.open{display:block}
+
+/* HERO */
+.hero{background:var(--navy);padding:140px 2rem 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-150px;right:-100px;width:650px;height:650px;background:radial-gradient(circle,rgba(26,86,219,0.12) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-50px;left:20%;width:500px;height:400px;background:radial-gradient(circle,rgba(91,143,249,0.05) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(91,143,249,0.12);border:1px solid rgba(91,143,249,0.25);border-radius:100px;padding:6px 14px;font-size:0.8rem;color:#5b8ff9;font-weight:500;margin-bottom:1.75rem;letter-spacing:0.03em}
+h1{font-family:var(--font-head);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem}
+h1 em{font-style:italic;color:#5b8ff9}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:2.25rem;font-weight:300}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.75rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-body);border:none}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#1447c0;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.25)}
+.btn-secondary:hover{background:rgba(255,255,255,0.07)}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+.hero-right{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.08);border-radius:14px;overflow:hidden}
+.hero-right-item{padding:1.5rem;background:rgba(255,255,255,0.03);display:flex;align-items:flex-start;gap:1rem}
+.hero-right-item:hover{background:rgba(255,255,255,0.06)}
+.hri-icon{width:38px;height:38px;border-radius:8px;background:rgba(91,143,249,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hri-icon svg{width:17px;height:17px;color:#5b8ff9}
+.hri-text h4{font-size:0.875rem;font-weight:500;color:#fff;margin-bottom:3px}
+.hri-text p{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.5}
+
+/* SECTION COMMONS */
+.section-inner{max-width:1160px;margin:0 auto}
+.section-tag{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--blue);text-transform:uppercase;margin-bottom:1rem}
+h2{font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:300;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem}
+.section-lead{font-size:1rem;color:var(--muted);max-width:560px;line-height:1.75;margin-bottom:3rem;font-weight:300}
+
+/* WHO WE ARE */
+.who-section{padding:100px 2rem;background:var(--off)}
+.who-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.who-text p{font-size:1rem;color:var(--muted);line-height:1.8;margin-bottom:1.25rem;font-weight:300}
+.who-text p:last-child{margin-bottom:0}
+.who-diffs{display:flex;flex-direction:column;gap:.75rem;margin-top:2.5rem}
+.who-diff{display:flex;align-items:center;gap:.875rem;padding:.875rem 1rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);font-size:0.875rem;font-weight:400;transition:all .2s}
+.who-diff:hover{border-color:#aac0f5;transform:translateX(4px)}
+.diff-dot{width:8px;height:8px;border-radius:50%;background:var(--blue);flex-shrink:0}
+.who-mission{background:var(--navy);border-radius:14px;padding:2.5rem}
+.who-mission .section-tag{color:#5b8ff9}
+.who-mission h3{font-family:var(--font-head);font-size:1.5rem;font-weight:300;color:#fff;line-height:1.3;letter-spacing:-0.02em;margin-bottom:1.25rem}
+.who-mission h3 em{font-style:italic;color:#5b8ff9}
+.who-mission p{font-size:0.9rem;color:rgba(255,255,255,0.55);line-height:1.8;font-weight:300;margin-bottom:1rem}
+.who-mission p:last-child{margin-bottom:0}
+.mission-divider{height:1px;background:rgba(255,255,255,0.08);margin:1.5rem 0}
+
+/* VALUES */
+.values-section{padding:100px 2rem;background:var(--white)}
+.values-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-top:3.5rem}
+.value-card{padding:2rem 1.5rem;background:var(--off);border:1px solid var(--border);border-radius:var(--radius);text-align:center;transition:all .25s}
+.value-card:hover{border-color:#aac0f5;background:var(--blue-light);transform:translateY(-4px)}
+.value-icon{width:52px;height:52px;border-radius:12px;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem}
+.value-icon svg{width:24px;height:24px;color:var(--blue)}
+.value-card:hover .value-icon{background:var(--blue);border-color:var(--blue)}
+.value-card:hover .value-icon svg{color:#fff}
+.value-card h3{font-size:0.9rem;font-weight:500;margin-bottom:.4rem}
+.value-card p{font-size:0.8rem;color:var(--muted);line-height:1.6;font-weight:300}
+
+/* HOW WE WORK */
+.how-section{padding:100px 2rem;background:var(--off)}
+.how-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.how-steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:1rem}
+.how-step{display:flex;gap:1.25rem;align-items:flex-start}
+.how-step-line{display:flex;flex-direction:column;align-items:center;gap:0}
+.how-step-dot{width:12px;height:12px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:4px}
+.how-step-connector{width:1px;height:100%;background:var(--border);flex:1;min-height:40px;margin-top:6px}
+.how-step:last-child .how-step-connector{display:none}
+.how-step-content h4{font-size:0.9rem;font-weight:500;margin-bottom:.35rem}
+.how-step-content p{font-size:0.875rem;color:var(--muted);line-height:1.65;font-weight:300}
+.how-right{display:flex;flex-direction:column;gap:1rem}
+.how-stat{padding:2rem;border-radius:var(--radius);border:1px solid var(--border)}
+.how-stat.dark{background:var(--navy);border-color:var(--navy)}
+.how-stat.light{background:var(--white)}
+.how-stat-num{font-family:var(--font-head);font-size:2.5rem;font-weight:600;line-height:1;margin-bottom:.3rem}
+.how-stat.dark .how-stat-num{color:#fff}
+.how-stat.light .how-stat-num{color:var(--navy)}
+.how-stat-label{font-size:0.82rem;font-weight:300}
+.how-stat.dark .how-stat-label{color:rgba(255,255,255,0.5)}
+.how-stat.light .how-stat-label{color:var(--muted)}
+.how-stat-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+
+/* REMOTE */
+.remote-section{padding:100px 2rem;background:var(--navy);position:relative;overflow:hidden}
+.remote-section::before{content:'';position:absolute;top:-200px;right:-100px;width:700px;height:700px;background:radial-gradient(circle,rgba(26,86,219,0.14) 0%,transparent 70%);pointer-events:none}
+.remote-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;position:relative;z-index:1}
+.remote-left h2{color:#fff}
+.remote-left .section-tag{color:#5b8ff9}
+.remote-left p{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.remote-points{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:2rem}
+.remote-point{padding:1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius)}
+.remote-point h4{font-size:0.875rem;font-weight:500;color:#fff;margin-bottom:.3rem}
+.remote-point p{font-size:0.8rem;color:rgba(255,255,255,0.45);font-weight:300;line-height:1.5}
+.dach-map{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:14px;padding:2.5rem;text-align:center}
+.dach-label{font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.4);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem}
+.dach-countries{display:flex;flex-direction:column;gap:.75rem}
+.dach-country{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius)}
+.dach-flag{font-size:1.5rem;width:36px;text-align:center}
+.dach-info h4{font-size:0.875rem;font-weight:500;color:#fff}
+.dach-info p{font-size:0.78rem;color:rgba(255,255,255,0.45);font-weight:300}
+.dach-active{margin-left:auto;font-size:0.72rem;padding:3px 10px;border-radius:100px;background:rgba(29,158,117,0.2);color:#4ade80;font-weight:500;border:1px solid rgba(29,158,117,0.25)}
+
+/* IMPRESSUM */
+.impressum-section{padding:80px 2rem;background:var(--off)}
+.impressum-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.impressum-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem}
+.impressum-card h3{font-size:0.9rem;font-weight:500;margin-bottom:1.25rem;padding-bottom:.75rem;border-bottom:1px solid var(--border)}
+.impressum-row{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1rem}
+.impressum-row:last-child{margin-bottom:0}
+.impressum-label{font-size:0.75rem;font-weight:500;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
+.impressum-val{font-size:0.875rem;color:var(--text);font-weight:300;line-height:1.5}
+.impressum-val a{color:var(--blue)}
+
+/* CTA BANNER */
+.cta-banner{padding:80px 2rem;background:var(--blue)}
+.cta-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-inner h2{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:#fff;letter-spacing:-0.02em;max-width:560px;line-height:1.3}
+.cta-inner h2 em{font-style:italic}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:#f0f4ff;transform:translateY(-1px)}
+.cta-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 2rem 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-brand p{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-top:.75rem;max-width:280px;font-weight:300}
+.footer-col h5{font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.9);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem}
+.footer-col a{display:block;font-size:0.875rem;color:rgba(255,255,255,0.45);padding:.3rem 0;transition:color .2s;font-weight:300}
+.footer-col a:hover{color:rgba(255,255,255,0.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.3);font-weight:300}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .who-inner{grid-template-columns:1fr;gap:3rem}
+  .values-grid{grid-template-columns:repeat(2,1fr)}
+  .how-inner{grid-template-columns:1fr;gap:3rem}
+  .remote-inner{grid-template-columns:1fr;gap:3rem}
+  .remote-points{grid-template-columns:1fr}
+  .impressum-inner{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-brand{grid-column:1/-1}
+  .cta-btns{flex-direction:column}
+}
+@media(max-width:560px){
+  .hero{padding:110px 1.25rem 80px}
+  .values-grid{grid-template-columns:1fr}
+  .how-stat-row{grid-template-columns:1fr}
+  .cta-inner{flex-direction:column;text-align:center}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Norvia <span>Solutions</span></a>
+    <div class="nav-links">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#prozess">Prozess</a>
+      <a href="unternehmen.html">Für Unternehmen</a>
+      <a href="kandidaten.html">Für Kandidaten</a>
+      <a href="ueber-uns.html" class="active">Über uns</a>
+      <a href="unternehmen.html#kontakt" class="nav-cta">Kandidaten anfragen</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#leistungen" onclick="closeMenu()">Leistungen</a>
+  <a href="index.html#prozess" onclick="closeMenu()">Prozess</a>
+  <a href="unternehmen.html" onclick="closeMenu()">Für Unternehmen</a>
+  <a href="kandidaten.html" onclick="closeMenu()">Für Kandidaten</a>
+  <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
+  <a href="unternehmen.html#kontakt" onclick="closeMenu()">Kandidaten anfragen →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Über uns</div>
+      <h1>Recruiting, das sich <em>anders</em> anfühlt.</h1>
+      <p class="hero-sub">Norvia Solutions ist eine spezialisierte IT-Personalberatung mit Fokus auf den deutschen Markt. Wir verbinden Marktkenntnis, strukturierte Prozesse und ehrliche Kommunikation – remote, effizient und mit echtem Verständnis für die Anforderungen in IT und Logistik.</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap">
+        <a href="unternehmen.html#kontakt" class="btn btn-primary">
+          Kontakt aufnehmen
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="#werte" class="btn btn-secondary">Unsere Werte</a>
+      </div>
+    </div>
+    <div class="hero-right fade-in">
+      <div class="hero-right-item">
+        <div class="hri-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="hri-text">
+          <h4>Remote-first seit Tag 1</h4>
+          <p>Vollständig remote aufgestellt – effizient und nah am Markt</p>
+        </div>
+      </div>
+      <div class="hero-right-item">
+        <div class="hri-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="hri-text">
+          <h4>Fokus auf IT-Spezialisten</h4>
+          <p>Cyber Security, DevOps, SAP – kein Generalismus</p>
+        </div>
+      </div>
+      <div class="hero-right-item">
+        <div class="hri-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="hri-text">
+          <h4>Partnerschaft statt Transaktion</h4>
+          <p>Langfristige Beziehungen zu Kandidaten und Unternehmen</p>
+        </div>
+      </div>
+      <div class="hero-right-item">
+        <div class="hri-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/></svg>
+        </div>
+        <div class="hri-text">
+          <h4>Qualität vor Quantität</h4>
+          <p>Weniger Profile, dafür passgenaue Besetzungen</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO WE ARE -->
+<section class="who-section">
+  <div class="who-inner">
+    <div class="fade-in">
+      <p class="section-tag">Wer wir sind</p>
+      <h2>Eine Personalberatung, die ihren Bereich wirklich kennt.</h2>
+      <p>Norvia Solutions ist eine spezialisierte Personalberatung, die Unternehmen und IT-Fachkräfte in ganz Deutschland unterstützt. Wir arbeiten vollständig remote und legen Wert auf nachhaltige, qualitativ hochwertige Vermittlungen – statt auf Masse.</p>
+      <p>Unser Ansatz verbindet tiefes Marktverständnis in IT und Logistik mit strukturierten Prozessen und einer Kommunikation, die immer ehrlich und direkt ist. Wir kennen die Anforderungen auf beiden Seiten – und nutzen dieses Wissen, um echte Matches zu schaffen.</p>
+      <p>Gegründet mit dem Ziel, Recruiting menschlicher, effizienter und nachhaltiger zu machen, hat sich Norvia Solutions als verlässlicher Partner für Unternehmen im DACH-Raum und für IT-Fachkräfte etabliert, die den nächsten Schritt in ihrer Karriere gehen wollen.</p>
+      <div class="who-diffs">
+        <div class="who-diff"><div class="diff-dot"></div>Klarer Fokus auf Cyber Security, IT/DevOps und SAP</div>
+        <div class="who-diff"><div class="diff-dot"></div>Remote-first Recruiting mit effizienten Prozessen</div>
+        <div class="who-diff"><div class="diff-dot"></div>Ehrliche Markt- und Gehaltseinschätzungen</div>
+        <div class="who-diff"><div class="diff-dot"></div>Sorgfältige technische Vorqualifizierung</div>
+        <div class="who-diff"><div class="diff-dot"></div>Partnerschaftlicher Ansatz statt reiner Transaktionsorientierung</div>
+      </div>
+    </div>
+    <div class="fade-in">
+      <div class="who-mission">
+        <p class="section-tag">Unsere Mission</p>
+        <h3>Die richtigen Menschen mit den <em>richtigen Unternehmen</em> verbinden.</h3>
+        <p>Wir schaffen nachhaltige Matches, von denen sowohl Kandidaten als auch Arbeitgeber langfristig profitieren. Nicht der schnellste Abschluss zählt – sondern der richtige.</p>
+        <div class="mission-divider"></div>
+        <p>Qualität, Transparenz und Respekt stehen dabei im Mittelpunkt – in jedem Gespräch, in jedem Prozess, in jeder Entscheidung.</p>
+        <div style="margin-top:2rem;display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div style="text-align:center;padding:1.25rem;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.07)">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:600;color:#fff;line-height:1">200+</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:.3rem;font-weight:300">Vermittlungen</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.07)">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:600;color:#fff;line-height:1">48h</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:.3rem;font-weight:300">Erste Profile</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.07)">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:600;color:#fff;line-height:1">4</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:.3rem;font-weight:300">Fachbereiche</div>
+          </div>
+          <div style="text-align:center;padding:1.25rem;background:rgba(255,255,255,0.04);border-radius:var(--radius);border:1px solid rgba(255,255,255,0.07)">
+            <div style="font-family:var(--font-head);font-size:2rem;font-weight:600;color:#5b8ff9;line-height:1">DACH</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:.3rem;font-weight:300">Marktfokus</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="values-section" id="werte">
+  <div class="section-inner">
+    <p class="section-tag fade-in">Unsere Werte</p>
+    <h2 class="fade-in">Was uns täglich antreibt.</h2>
+    <p class="section-lead fade-in">Fünf Prinzipien, die jeden Schritt unserer Arbeit prägen – gegenüber Kandidaten, Unternehmen und uns selbst.</p>
+    <div class="values-grid">
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3>Transparenz</h3>
+        <p>Klare Kommunikation und realistische Erwartungen – immer und auf beiden Seiten.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Vertrauen</h3>
+        <p>Vertraulicher und respektvoller Umgang mit allen Informationen – ohne Ausnahme.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Schnelligkeit</h3>
+        <p>Schnelle Rückmeldungen und effiziente Prozesse – ohne Einbußen bei der Qualität.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/></svg>
+        </div>
+        <h3>Qualität</h3>
+        <p>Weniger Profile, dafür passgenaue Besetzungen – wir setzen auf Tiefe statt Breite.</p>
+      </div>
+      <div class="value-card fade-in">
+        <div class="value-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Partnerschaft</h3>
+        <p>Langfristige Beziehungen zu Kandidaten und Unternehmen sind unser Ziel – kein reiner Transaktionsfokus.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW WE WORK -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="fade-in">
+      <p class="section-tag">So arbeiten wir</p>
+      <h2>Eng, ehrlich und strukturiert.</h2>
+      <p class="section-lead" style="margin-bottom:0">Jede Suche beginnt mit einem detaillierten Briefing und wird durch gezielte Kandidatensuche, strukturierte Bewertung und transparente Kommunikation begleitet.</p>
+      <div class="how-steps">
+        <div class="how-step">
+          <div class="how-step-line"><div class="how-step-dot"></div><div class="how-step-connector"></div></div>
+          <div class="how-step-content">
+            <h4>Zuhören zuerst</h4>
+            <p>Wir beginnen damit, wirklich zu verstehen – Ziele, Erwartungen, Einschränkungen. Kein Standardprozess, sondern echtes Interesse.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-line"><div class="how-step-dot"></div><div class="how-step-connector"></div></div>
+          <div class="how-step-content">
+            <h4>Gezielt suchen</h4>
+            <p>Active Sourcing und Netzwerkarbeit statt Massenaussendungen. Wir suchen die richtigen Menschen – nicht einfach viele.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-line"><div class="how-step-dot"></div><div class="how-step-connector"></div></div>
+          <div class="how-step-content">
+            <h4>Sorgfältig prüfen</h4>
+            <p>Technische Vorqualifizierung, ehrliche Einschätzung der Passgenauigkeit – bevor ein Profil weitergeleitet wird.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-line"><div class="how-step-dot"></div><div class="how-step-connector"></div></div>
+          <div class="how-step-content">
+            <h4>Transparent begleiten</h4>
+            <p>Klare Kommunikation auf beiden Seiten während des gesamten Prozesses – keine Black Box, kein Warten ohne Rückmeldung.</p>
+          </div>
+        </div>
+        <div class="how-step">
+          <div class="how-step-line"><div class="how-step-dot"></div></div>
+          <div class="how-step-content">
+            <h4>Nachhaltig abschließen</h4>
+            <p>Begleitung bis zum Start und darüber hinaus – weil ein guter Abschluss der Beginn einer langen Partnerschaft ist.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="fade-in">
+      <p class="section-tag" style="opacity:0;margin-bottom:0">spacing</p>
+      <h2 style="opacity:0;margin-bottom:0">spacing</h2>
+      <div class="how-stat-row" style="margin-bottom:1rem">
+        <div class="how-stat dark">
+          <div class="how-stat-num">200+</div>
+          <div class="how-stat-label">Erfolgreich vermittelte Kandidaten</div>
+        </div>
+        <div class="how-stat light">
+          <div class="how-stat-num">48h</div>
+          <div class="how-stat-label">Bis zum ersten Kandidatenprofil</div>
+        </div>
+      </div>
+      <div class="how-stat-row" style="margin-bottom:1rem">
+        <div class="how-stat light">
+          <div class="how-stat-num">4</div>
+          <div class="how-stat-label">Spezialisierte Fachbereiche</div>
+        </div>
+        <div class="how-stat dark">
+          <div class="how-stat-num">100%</div>
+          <div class="how-stat-label">Remote Prozess – kein Bürobesuch nötig</div>
+        </div>
+      </div>
+      <div style="padding:1.5rem;background:var(--blue-light);border:1px solid #aac0f5;border-radius:var(--radius);margin-top:0">
+        <p style="font-size:0.875rem;color:var(--navy);line-height:1.7;font-weight:300"><strong style="font-weight:500;display:block;margin-bottom:.3rem">Recruiting sollte effizient, ehrlich und menschlich sein.</strong>Das ist nicht nur ein Anspruch – es ist der Maßstab, an dem wir unsere Arbeit täglich messen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REMOTE & DACH -->
+<section class="remote-section">
+  <div class="remote-inner">
+    <div class="remote-left fade-in">
+      <p class="section-tag">Remote & Deutschland-fokussiert</p>
+      <h2 style="color:#fff">Überall erreichbar. <br>Immer nah am Markt.</h2>
+      <p>Norvia Solutions arbeitet vollständig remote und konzentriert sich ausschließlich auf den deutschsprachigen DACH-Markt. So können wir effizient arbeiten und gleichzeitig nah an den Marktanforderungen bleiben.</p>
+      <p>Keine Bürozeiten, keine Standortbeschränkungen – nur schnelle, direkte Kommunikation und tiefes Marktverständnis.</p>
+      <div class="remote-points">
+        <div class="remote-point">
+          <h4>Schnelle Reaktionszeiten</h4>
+          <p>Antworten innerhalb von 24 Stunden – egal wann Sie sich melden.</p>
+        </div>
+        <div class="remote-point">
+          <h4>Deutschsprachig</h4>
+          <p>Alle Prozesse auf Deutsch – kein Übersetzungsaufwand.</p>
+        </div>
+        <div class="remote-point">
+          <h4>Marktkenntnis DACH</h4>
+          <p>Tiefes Verständnis für Gehaltsstrukturen und Erwartungen im DACH-Raum.</p>
+        </div>
+        <div class="remote-point">
+          <h4>Vollständig digital</h4>
+          <p>Kein Papier, kein Bürobesuch – effizienter Prozess von Anfang bis Ende.</p>
+        </div>
+      </div>
+    </div>
+    <div class="fade-in">
+      <div class="dach-map">
+        <div class="dach-label">Aktive Märkte</div>
+        <div class="dach-countries">
+          <div class="dach-country">
+            <div class="dach-flag">🇩🇪</div>
+            <div class="dach-info">
+              <h4>Deutschland</h4>
+              <p>Primärer Markt · Alle Bundesländer</p>
+            </div>
+            <span class="dach-active">Aktiv</span>
+          </div>
+          <div class="dach-country">
+            <div class="dach-flag">🇦🇹</div>
+            <div class="dach-info">
+              <h4>Österreich</h4>
+              <p>Wien, Graz, Linz und weitere</p>
+            </div>
+            <span class="dach-active">Aktiv</span>
+          </div>
+          <div class="dach-country">
+            <div class="dach-flag">🇨🇭</div>
+            <div class="dach-info">
+              <h4>Schweiz</h4>
+              <p>Zürich, Basel, Bern und weitere</p>
+            </div>
+            <span class="dach-active">Aktiv</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPRESSUM -->
+<section class="impressum-section" id="impressum">
+  <div class="section-inner">
+    <p class="section-tag fade-in">Rechtliches</p>
+    <h2 class="fade-in" style="margin-bottom:2rem">Impressum</h2>
+    <div class="impressum-inner">
+      <div class="impressum-card fade-in">
+        <h3>Angaben gemäß § 5 DDG</h3>
+        <div class="impressum-row">
+          <div class="impressum-label">Inhaber</div>
+          <div class="impressum-val">Behar Nela</div>
+        </div>
+        <div class="impressum-row">
+          <div class="impressum-label">Unternehmensname</div>
+          <div class="impressum-val">Norvia Solutions</div>
+        </div>
+        <div class="impressum-row">
+          <div class="impressum-label">Adresse</div>
+          <div class="impressum-val">Glonner Str. 7a<br>85640 Putzbrunn</div>
+        </div>
+        <div class="impressum-row">
+          <div class="impressum-label">Wirtschafts-ID</div>
+          <div class="impressum-val">gemäß § 139c AO (auf Anfrage)</div>
+        </div>
+      </div>
+      <div class="impressum-card fade-in">
+        <h3>Kontakt</h3>
+        <div class="impressum-row">
+          <div class="impressum-label">Telefon</div>
+          <div class="impressum-val"><a href="tel:+491631694817">+49 163 169 4817</a></div>
+        </div>
+        <div class="impressum-row">
+          <div class="impressum-label">E-Mail</div>
+          <div class="impressum-val"><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></div>
+        </div>
+        <div class="impressum-row">
+          <div class="impressum-label">Website</div>
+          <div class="impressum-val"><a href="https://www.norvia-solutions.de">www.norvia-solutions.de</a></div>
+        </div>
+        <div class="impressum-row" style="margin-top:1.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <div class="impressum-label">Hinweis</div>
+          <div class="impressum-val" style="font-size:0.8rem">Inhaltlich verantwortlich gemäß § 18 Abs. 2 MStV: Behar Nela, Anschrift wie oben.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2>Ob Kandidat oder Unternehmen – <em>wir antworten schnell.</em></h2>
+    <div class="cta-btns">
+      <a href="unternehmen.html#kontakt" class="btn btn-white">
+        Kandidaten anfragen
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="kandidaten.html#cv-upload" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.4);color:#fff">
+        CV hochladen
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v9M4 7l4 4 4-4"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="font-size:1.1rem">Norvia <span>Solutions</span></div>
+        <p>Remote Recruiting für den deutschen Markt. Spezialisiert auf IT, Cyber Security, SAP und Logistik.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <a href="index.html#leistungen">Cyber Security</a>
+        <a href="index.html#leistungen">IT & DevOps</a>
+        <a href="index.html#leistungen">SAP</a>
+        <a href="index.html#leistungen">Transport & Logistik</a>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="unternehmen.html">Für Unternehmen</a>
+        <a href="kandidaten.html">Für Kandidaten</a>
+        <a href="#impressum">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Norvia Solutions. Alle Rechte vorbehalten.</p>
+      <p>DSGVO-konform · Made in Germany</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
