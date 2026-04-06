@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Für Kandidaten – Norvia Solutions</title>
+<meta name="description" content="Norvia Solutions unterstützt IT-Fachkräfte dabei, die passende Position in Deutschland zu finden – mit ehrlicher Beratung, Interviewvorbereitung und Zugang zu exklusiven Stellen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0e1624;
+  --navy2: #162033;
+  --blue: #1a56db;
+  --blue-light: #e8f0fe;
+  --off: #f7f7f5;
+  --white: #ffffff;
+  --text: #0e1624;
+  --muted: #5a6478;
+  --border: #e2e6ef;
+  --radius: 10px;
+  --font-head: 'Fraunces', Georgia, serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,22,36,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-head);font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:-0.01em}
+.nav-logo span{color:#5b8ff9}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.7);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--blue);color:#fff !important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:500 !important;font-size:0.875rem;transition:background .2s !important}
+.nav-cta:hover{background:#1447c0 !important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem;z-index:99;border-bottom:1px solid rgba(255,255,255,0.1)}
+.mobile-menu a{display:block;padding:.75rem 0;font-size:1rem;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.07)}
+.mobile-menu a:last-child{border-bottom:none;margin-top:.5rem;color:#5b8ff9;font-weight:500}
+.mobile-menu.open{display:block}
+
+/* HERO */
+.hero{background:var(--navy);padding:140px 2rem 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(26,86,219,0.12) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-100px;left:40%;width:400px;height:400px;background:radial-gradient(circle,rgba(91,143,249,0.06) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(91,143,249,0.12);border:1px solid rgba(91,143,249,0.25);border-radius:100px;padding:6px 14px;font-size:0.8rem;color:#5b8ff9;font-weight:500;margin-bottom:1.75rem;letter-spacing:0.03em}
+h1{font-family:var(--font-head);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem}
+h1 em{font-style:italic;color:#5b8ff9}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.75;margin-bottom:2.25rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.75rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-body);border:none}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-primary:hover{background:#1447c0;transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.25)}
+.btn-secondary:hover{background:rgba(255,255,255,0.07)}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+.hero-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:2rem;backdrop-filter:blur(8px)}
+.hero-card-title{font-size:0.75rem;font-weight:500;color:rgba(255,255,255,0.4);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.25rem}
+.hero-fact{display:flex;align-items:center;gap:1rem;padding:.875rem 0;border-bottom:1px solid rgba(255,255,255,0.07)}
+.hero-fact:last-child{border-bottom:none;padding-bottom:0}
+.hero-fact-icon{width:36px;height:36px;border-radius:8px;background:rgba(91,143,249,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.hero-fact-icon svg{width:16px;height:16px;color:#5b8ff9}
+.hero-fact-text{font-size:0.875rem;color:rgba(255,255,255,0.75);font-weight:300;line-height:1.4}
+.hero-fact-text strong{font-weight:500;color:#fff;display:block;font-size:0.8rem}
+
+/* SECTION COMMONS */
+.section-inner{max-width:1160px;margin:0 auto}
+.section-tag{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--blue);text-transform:uppercase;margin-bottom:1rem}
+h2{font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.5rem);font-weight:300;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem}
+.section-lead{font-size:1rem;color:var(--muted);max-width:520px;line-height:1.75;margin-bottom:3rem;font-weight:300}
+
+/* WHAT WE DO */
+.services-section{padding:100px 2rem;background:var(--off)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+.srv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:2rem 1.75rem;transition:all .25s}
+.srv-card:hover{border-color:#aac0f5;box-shadow:0 8px 32px rgba(26,86,219,0.08);transform:translateY(-3px)}
+.srv-icon{width:44px;height:44px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem}
+.srv-icon svg{width:22px;height:22px;color:var(--blue)}
+.srv-card h3{font-size:0.95rem;font-weight:500;margin-bottom:.5rem}
+.srv-card p{font-size:0.875rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* FOCUS AREAS */
+.focus-section{padding:100px 2rem;background:var(--white)}
+.focus-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.focus-areas{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.focus-item{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;background:var(--off);border:1px solid var(--border);border-radius:var(--radius);transition:all .2s}
+.focus-item:hover{border-color:#aac0f5;background:var(--blue-light)}
+.focus-item-left{display:flex;align-items:center;gap:1rem}
+.focus-item-icon{width:40px;height:40px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center}
+.focus-item-icon svg{width:18px;height:18px;color:var(--blue)}
+.focus-item h4{font-size:0.9rem;font-weight:500}
+.focus-item p{font-size:0.8rem;color:var(--muted);font-weight:300;margin-top:2px}
+.focus-item-badge{font-size:0.75rem;padding:4px 12px;border-radius:100px;background:var(--blue-light);color:var(--blue);font-weight:500;white-space:nowrap}
+.level-info{margin-top:2rem;padding:1.5rem;background:var(--navy);border-radius:var(--radius)}
+.level-info p{font-size:0.875rem;color:rgba(255,255,255,0.65);line-height:1.7;font-weight:300}
+.level-info strong{color:#fff;font-weight:500}
+
+/* PROCESS */
+.process-section{padding:100px 2rem;background:var(--off)}
+.process-list{display:flex;flex-direction:column;gap:0;margin-top:3rem;max-width:720px}
+.proc-step{display:flex;gap:2rem;padding:2rem 0;border-bottom:1px solid var(--border);position:relative}
+.proc-step:last-child{border-bottom:none}
+.proc-num{width:48px;height:48px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-size:1rem;font-weight:600;color:var(--navy);flex-shrink:0;transition:all .2s}
+.proc-step:hover .proc-num{background:var(--navy);color:#fff;border-color:var(--navy)}
+.proc-content h4{font-size:0.95rem;font-weight:500;margin-bottom:.4rem}
+.proc-content p{font-size:0.875rem;color:var(--muted);line-height:1.65;font-weight:300}
+
+/* TRUST */
+.trust-section{padding:100px 2rem;background:var(--navy);position:relative;overflow:hidden}
+.trust-section::before{content:'';position:absolute;top:-200px;left:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(26,86,219,0.12) 0%,transparent 70%);pointer-events:none}
+.trust-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.trust-left h2{color:#fff}
+.trust-left .section-tag{color:#5b8ff9}
+.trust-left p{font-size:1rem;color:rgba(255,255,255,0.55);line-height:1.8;font-weight:300;margin-bottom:1.25rem}
+.trust-points{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+.trust-point{display:flex;gap:1rem;align-items:flex-start;padding:1.25rem;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius)}
+.trust-point-icon{width:36px;height:36px;border-radius:8px;background:rgba(91,143,249,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.trust-point-icon svg{width:16px;height:16px;color:#5b8ff9}
+.trust-point h4{font-size:0.875rem;font-weight:500;color:#fff;margin-bottom:3px}
+.trust-point p{font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.5}
+
+/* CV UPLOAD */
+.cv-section{padding:100px 2rem;background:var(--off)}
+.cv-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.cv-form{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2.5rem}
+.cv-form h3{font-family:var(--font-head);font-size:1.4rem;font-weight:300;margin-bottom:.4rem;letter-spacing:-0.01em}
+.cv-form p{font-size:0.85rem;color:var(--muted);margin-bottom:2rem;font-weight:300}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:0.8rem;font-weight:500;color:var(--text);margin-bottom:.4rem;letter-spacing:0.01em}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem 1rem;border:1px solid var(--border);border-radius:7px;font-size:0.875rem;font-family:var(--font-body);color:var(--text);background:var(--white);transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,0.08)}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.upload-zone{border:2px dashed var(--border);border-radius:var(--radius);padding:2rem;text-align:center;cursor:pointer;transition:all .2s;background:var(--off)}
+.upload-zone:hover{border-color:var(--blue);background:var(--blue-light)}
+.upload-zone svg{width:32px;height:32px;color:var(--muted);margin-bottom:.75rem}
+.upload-zone p{font-size:0.875rem;color:var(--muted);font-weight:300}
+.upload-zone strong{font-weight:500;color:var(--text);display:block;margin-bottom:4px}
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:.85rem 1.5rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;font-family:var(--font-body);transition:background .2s;margin-top:.5rem}
+.form-submit:hover{background:#1447c0}
+.form-note{font-size:0.75rem;color:var(--muted);text-align:center;margin-top:.75rem}
+.cv-text h2{margin-bottom:.75rem}
+.cv-checklist{display:flex;flex-direction:column;gap:.75rem;margin:2rem 0}
+.cv-check{display:flex;align-items:flex-start;gap:.875rem}
+.check-icon{width:22px;height:22px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-icon svg{width:11px;height:11px;color:var(--blue)}
+.cv-check p{font-size:0.875rem;color:var(--muted);line-height:1.6;font-weight:300}
+.cv-check p strong{font-weight:500;color:var(--text);display:block;margin-bottom:2px}
+.dsgvo-note{margin-top:2rem;padding:1.25rem 1.5rem;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);font-size:0.82rem;color:var(--muted);line-height:1.6;font-weight:300}
+.dsgvo-note strong{font-weight:500;color:var(--text);display:block;margin-bottom:4px}
+
+/* CTA BANNER */
+.cta-banner{padding:80px 2rem;background:var(--blue)}
+.cta-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-inner h2{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:#fff;letter-spacing:-0.02em;max-width:520px;line-height:1.3}
+.cta-inner h2 em{font-style:italic}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:#f0f4ff;transform:translateY(-1px)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 2rem 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-brand p{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-top:.75rem;max-width:280px;font-weight:300}
+.footer-col h5{font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.9);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem}
+.footer-col a{display:block;font-size:0.875rem;color:rgba(255,255,255,0.45);padding:.3rem 0;transition:color .2s;font-weight:300}
+.footer-col a:hover{color:rgba(255,255,255,0.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.3);font-weight:300}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-card{display:none}
+  .services-grid{grid-template-columns:1fr 1fr}
+  .focus-inner{grid-template-columns:1fr;gap:2.5rem}
+  .trust-inner{grid-template-columns:1fr;gap:3rem}
+  .cv-inner{grid-template-columns:1fr;gap:3rem}
+  .cv-text{order:2}.cv-form{order:1}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .hero{padding:110px 1.25rem 80px}
+  .services-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .cta-inner{flex-direction:column;text-align:center}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Norvia <span>Solutions</span></a>
+    <div class="nav-links">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#prozess">Prozess</a>
+      <a href="unternehmen.html">Für Unternehmen</a>
+      <a href="kandidaten.html" class="active">Für Kandidaten</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kandidaten.html#cv-upload" class="nav-cta">CV hochladen</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#leistungen" onclick="closeMenu()">Leistungen</a>
+  <a href="index.html#prozess" onclick="closeMenu()">Prozess</a>
+  <a href="unternehmen.html" onclick="closeMenu()">Für Unternehmen</a>
+  <a href="kandidaten.html" onclick="closeMenu()">Für Kandidaten</a>
+  <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
+  <a href="#cv-upload" onclick="closeMenu()">CV hochladen →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-tag">Für IT-Fachkräfte</div>
+      <h1>Dein nächster Schritt. <em>Auf Augenhöhe</em> begleitet.</h1>
+      <p class="hero-sub">Wir unterstützen IT-Fachkräfte dabei, die passende Position in Deutschland zu finden – mit ehrlicher Beratung, ohne Druck und mit echtem Verständnis für deinen Bereich.</p>
+      <div class="hero-actions">
+        <a href="#cv-upload" class="btn btn-primary">
+          CV hochladen
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 2v9M4 7l4 4 4-4"/><path d="M2 13h12"/></svg>
+        </a>
+        <a href="#prozess" class="btn btn-secondary">Wie es funktioniert</a>
+      </div>
+    </div>
+    <div class="hero-card fade-in">
+      <div class="hero-card-title">Was wir für dich tun</div>
+      <div class="hero-fact">
+        <div class="hero-fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        </div>
+        <div class="hero-fact-text">
+          <strong>Lebenslauf-Optimierung</strong>
+          Professionelle Überprüfung und Verbesserung deines Profils
+        </div>
+      </div>
+      <div class="hero-fact">
+        <div class="hero-fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="hero-fact-text">
+          <strong>Ehrliches Feedback</strong>
+          Zu Rollen, Gehalt und aktuellen Markterwartungen
+        </div>
+      </div>
+      <div class="hero-fact">
+        <div class="hero-fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="hero-fact-text">
+          <strong>Interviewvorbereitung</strong>
+          Technische und fachliche Vorbereitung auf Gespräche
+        </div>
+      </div>
+      <div class="hero-fact">
+        <div class="hero-fact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="hero-fact-text">
+          <strong>Diskret & kostenlos</strong>
+          Keine Kosten für Kandidaten, keine Weitergabe ohne Zustimmung
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE DO -->
+<section class="services-section" id="leistungen">
+  <div class="section-inner">
+    <p class="section-tag fade-in">Unsere Unterstützung</p>
+    <h2 class="fade-in">Du bist mehr als ein Lebenslauf.</h2>
+    <p class="section-lead fade-in">Wir nehmen uns Zeit, deine Erfahrung, Ziele und Erwartungen zu verstehen – bevor wir dich einem Unternehmen vorstellen.</p>
+    <div class="services-grid">
+      <div class="srv-card fade-in">
+        <div class="srv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
+        </div>
+        <h3>Lebenslauf-Check</h3>
+        <p>Wir prüfen und optimieren dein Profil – klar, strukturiert und auf den deutschen Markt zugeschnitten.</p>
+      </div>
+      <div class="srv-card fade-in">
+        <div class="srv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <h3>Karriereberatung</h3>
+        <p>Ehrliches Feedback zu Rollen, Gehaltsrahmen, Marktentwicklung und deinen nächsten Karriereschritten.</p>
+      </div>
+      <div class="srv-card fade-in">
+        <div class="srv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Passgenaues Matching</h3>
+        <p>Du erhältst ausschließlich Positionen, die fachlich und persönlich zu dir passen – kein Spam, kein Streuverlust.</p>
+      </div>
+      <div class="srv-card fade-in">
+        <div class="srv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3>Interviewvorbereitung</h3>
+        <p>Technische und fachliche Vorbereitung auf Gespräche mit potenziellen Arbeitgebern.</p>
+      </div>
+      <div class="srv-card fade-in">
+        <div class="srv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+        </div>
+        <h3>Exklusive Stellen</h3>
+        <p>Zugang zu Positionen, die nicht öffentlich ausgeschrieben sind – remote-fokussiert und in Deutschland.</p>
+      </div>
+      <div class="srv-card fade-in">
+        <div class="srv-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Begleitung bis zum Start</h3>
+        <p>Unterstützung bei Vertragsverhandlung, Angebotsbewertung und dem Einstieg ins neue Unternehmen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOCUS AREAS -->
+<section class="focus-section">
+  <div class="focus-inner">
+    <div class="fade-in">
+      <p class="section-tag">Schwerpunkte</p>
+      <h2>Die Bereiche, in denen wir wirklich tief sind.</h2>
+      <p class="section-lead" style="margin-bottom:0">Wir vermitteln ausschließlich in Bereichen, in denen unser Team technisches Verständnis mitbringt – kein Generalismus, echter Fokus.</p>
+      <div class="focus-areas">
+        <div class="focus-item">
+          <div class="focus-item-left">
+            <div class="focus-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>Cyber Security</h4>
+              <p>SOC, IAM, Cloud Security, GRC, Security Engineering</p>
+            </div>
+          </div>
+          <span class="focus-item-badge">Aktiv</span>
+        </div>
+        <div class="focus-item">
+          <div class="focus-item-left">
+            <div class="focus-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <div>
+              <h4>IT & DevOps</h4>
+              <p>Platform Engineering, SRE, Cloud, Kubernetes, Infrastruktur</p>
+            </div>
+          </div>
+          <span class="focus-item-badge">Aktiv</span>
+        </div>
+        <div class="focus-item">
+          <div class="focus-item-left">
+            <div class="focus-item-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div>
+              <h4>SAP</h4>
+              <p>S/4HANA, Basis, ABAP-Entwicklung, Projektleitung</p>
+            </div>
+          </div>
+          <span class="focus-item-badge">Aktiv</span>
+        </div>
+      </div>
+      <div class="level-info">
+        <p><strong>Junior bis Senior.</strong> Wir besetzen Festanstellungen sowie ausgewählte Projektrollen auf allen Erfahrungsstufen – von Berufseinsteigern mit relevantem Studium bis zu erfahrenen Architekten und Leads.</p>
+      </div>
+    </div>
+    <div class="fade-in">
+      <p class="section-tag">Warum Norvia?</p>
+      <h2>Recruiting, das sich anders anfühlt.</h2>
+      <div style="display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem">
+        <div style="padding:1.5rem;background:var(--off);border:1px solid var(--border);border-radius:var(--radius)">
+          <div style="font-size:2rem;font-family:var(--font-head);font-weight:600;color:var(--navy);margin-bottom:.25rem">100%</div>
+          <div style="font-size:0.875rem;font-weight:500;margin-bottom:.3rem">Kostenlos für Kandidaten</div>
+          <div style="font-size:0.82rem;color:var(--muted);font-weight:300">Unsere Vergütung kommt ausschließlich vom Unternehmen. Für dich entstehen keine Kosten.</div>
+        </div>
+        <div style="padding:1.5rem;background:var(--off);border:1px solid var(--border);border-radius:var(--radius)">
+          <div style="font-size:2rem;font-family:var(--font-head);font-weight:600;color:var(--navy);margin-bottom:.25rem">0</div>
+          <div style="font-size:0.875rem;font-weight:500;margin-bottom:.3rem">Weitergabe ohne Zustimmung</div>
+          <div style="font-size:0.82rem;color:var(--muted);font-weight:300">Dein Profil wird niemals ohne deine ausdrückliche Zustimmung an ein Unternehmen weitergeleitet.</div>
+        </div>
+        <div style="padding:1.5rem;background:var(--navy);border-radius:var(--radius)">
+          <div style="font-size:2rem;font-family:var(--font-head);font-weight:600;color:#fff;margin-bottom:.25rem">48h</div>
+          <div style="font-size:0.875rem;font-weight:500;color:#fff;margin-bottom:.3rem">Erste Rückmeldung</div>
+          <div style="font-size:0.82rem;color:rgba(255,255,255,0.5);font-weight:300">Wir melden uns innerhalb von 48 Stunden nach Eingang deines Lebenslaufs mit konkreten Möglichkeiten.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section" id="prozess">
+  <div class="section-inner">
+    <p class="section-tag fade-in">Der Prozess</p>
+    <h2 class="fade-in">Schritt für Schritt zum richtigen Job.</h2>
+    <p class="section-lead fade-in">Kein bürokratischer Aufwand. Fünf klare Schritte – remote, schnell und auf dich zugeschnitten.</p>
+    <div class="process-list">
+      <div class="proc-step fade-in">
+        <div class="proc-num">1</div>
+        <div class="proc-content">
+          <h4>Erstes Gespräch</h4>
+          <p>Ein kurzer, remote Austausch zu deiner Erfahrung, deinen Zielen und Gehaltsvorstellungen. Kein Druck, kein Verkaufsgespräch – wir hören zu.</p>
+        </div>
+      </div>
+      <div class="proc-step fade-in">
+        <div class="proc-num">2</div>
+        <div class="proc-content">
+          <h4>Lebenslauf-Check</h4>
+          <p>Wir analysieren dein Profil und helfen dir, es klar, strukturiert und professionell für den deutschen Markt aufzubereiten.</p>
+        </div>
+      </div>
+      <div class="proc-step fade-in">
+        <div class="proc-num">3</div>
+        <div class="proc-content">
+          <h4>Passgenaues Matching</h4>
+          <p>Du erhältst ausschließlich Positionen, die fachlich und persönlich wirklich zu dir passen. Keine Massenaussendungen, kein Spam.</p>
+        </div>
+      </div>
+      <div class="proc-step fade-in">
+        <div class="proc-num">4</div>
+        <div class="proc-content">
+          <h4>Interviewvorbereitung</h4>
+          <p>Technische und fachliche Vorbereitung auf Gespräche mit potenziellen Arbeitgebern – inklusive typischer Fragen und Erwartungen.</p>
+        </div>
+      </div>
+      <div class="proc-step fade-in">
+        <div class="proc-num">5</div>
+        <div class="proc-content">
+          <h4>Angebot & Start</h4>
+          <p>Unterstützung bei der Bewertung des Angebots, Vertragsverhandlung und dem Start im neuen Unternehmen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section">
+  <div class="trust-inner">
+    <div class="trust-left fade-in">
+      <p class="section-tag">Transparenz & Vertrauen</p>
+      <h2>Deine Daten. Deine Entscheidung.</h2>
+      <p>Wir stehen für Transparenz und Respekt im gesamten Prozess. Es gibt keinen Druck, keine versteckten Informationen und keine unerwarteten Überraschungen.</p>
+      <p>Du bestimmst, welche Unternehmen dein Profil sehen – immer.</p>
+    </div>
+    <div class="fade-in">
+      <div class="trust-points">
+        <div class="trust-point">
+          <div class="trust-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+          </div>
+          <div>
+            <h4>Keine Weitergabe ohne Zustimmung</h4>
+            <p>Dein Profil geht nur mit deiner ausdrücklichen Genehmigung an ein Unternehmen.</p>
+          </div>
+        </div>
+        <div class="trust-point">
+          <div class="trust-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <div>
+            <h4>Vollständige Transparenz</h4>
+            <p>Du weißt immer, welche Unternehmen dein Profil gesehen haben und was als Nächstes passiert.</p>
+          </div>
+        </div>
+        <div class="trust-point">
+          <div class="trust-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>DSGVO-konform</h4>
+            <p>Deine Daten werden gemäß den geltenden europäischen Datenschutzbestimmungen verarbeitet.</p>
+          </div>
+        </div>
+        <div class="trust-point">
+          <div class="trust-point-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+          </div>
+          <div>
+            <h4>Kein Druck, kein Spam</h4>
+            <p>Wir schlagen nur Rollen vor, die wirklich passen – und nur dann, wenn du das möchtest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CV UPLOAD -->
+<section class="cv-section" id="cv-upload">
+  <div class="cv-inner">
+    <div class="cv-text fade-in">
+      <p class="section-tag">Jetzt starten</p>
+      <h2>Bereit für den nächsten Schritt?</h2>
+      <p style="font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:0;font-weight:300">Lade deinen Lebenslauf hoch – wir melden uns innerhalb von 48 Stunden mit passenden Möglichkeiten. Kostenlos, diskret und unverbindlich.</p>
+      <div class="cv-checklist">
+        <div class="cv-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6l3 3 5-5"/></svg></div>
+          <p><strong>Keine Kosten</strong>Für Kandidaten ist unser Service vollständig kostenlos.</p>
+        </div>
+        <div class="cv-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6l3 3 5-5"/></svg></div>
+          <p><strong>Schnelle Rückmeldung</strong>Erste Rückmeldung innerhalb von 48 Stunden.</p>
+        </div>
+        <div class="cv-check">
+          <div class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 6l3 3 5-5"/></svg></div>
+          <p><strong>Diskret & unverbindlich</strong>Keine Verpflichtung, keine Weitergabe ohne Zustimmung.</p>
+        </div>
+      </div>
+      <div class="dsgvo-note">
+        <strong>Datenschutzhinweis</strong>
+        Deine Daten werden ausschließlich zum Zweck der Personalvermittlung verarbeitet und gemäß den geltenden Datenschutzbestimmungen (DSGVO) behandelt. Weitere Informationen findest du in unserer Datenschutzerklärung.
+      </div>
+    </div>
+    <div class="cv-form fade-in">
+      <h3>Lebenslauf hochladen</h3>
+      <p>Wir melden uns innerhalb von 48 Stunden bei dir.</p>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Vorname *</label>
+            <input type="text" name="firstname" placeholder="Max" required>
+          </div>
+          <div class="form-group">
+            <label>Nachname *</label>
+            <input type="text" name="lastname" placeholder="Müller" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>E-Mail *</label>
+          <input type="email" name="email" placeholder="max@beispiel.de" required>
+        </div>
+        <div class="form-group">
+          <label>Telefon</label>
+          <input type="tel" name="phone" placeholder="+49 170 000 0000">
+        </div>
+        <div class="form-group">
+          <label>Fachbereich *</label>
+          <select name="field" required>
+            <option value="">Bitte wählen</option>
+            <option>Cyber Security</option>
+            <option>IT / DevOps</option>
+            <option>SAP</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Lebenslauf (PDF) *</label>
+          <div class="upload-zone" onclick="document.getElementById('cv-file').click()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg>
+            <strong>Datei auswählen oder hier ablegen</strong>
+            <p>PDF, DOC, DOCX – max. 5 MB</p>
+          </div>
+          <input type="file" id="cv-file" name="cv" accept=".pdf,.doc,.docx" style="display:none" onchange="updateFileName(this)">
+          <div id="file-name" style="font-size:0.8rem;color:var(--muted);margin-top:6px;display:none"></div>
+        </div>
+        <div class="form-group">
+          <label>Kurze Nachricht (optional)</label>
+          <textarea name="message" placeholder="Verfügbarkeit, Gehaltsvorstellung, bevorzugtes Arbeitsmodell..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Lebenslauf absenden →</button>
+        <p class="form-note">Kostenlos · Diskret · DSGVO-konform</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2>Fragen? <em>Wir antworten schnell</em> und unkompliziert.</h2>
+    <a href="mailto:info@norvia-solutions.de" class="btn btn-white">
+      Kontakt aufnehmen
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="font-size:1.1rem">Norvia <span>Solutions</span></div>
+        <p>Remote Recruiting für den deutschen Markt. Spezialisiert auf IT, Cyber Security, SAP und Logistik.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <a href="index.html#leistungen">Cyber Security</a>
+        <a href="index.html#leistungen">IT & DevOps</a>
+        <a href="index.html#leistungen">SAP</a>
+        <a href="index.html#leistungen">Transport & Logistik</a>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="unternehmen.html">Für Unternehmen</a>
+        <a href="kandidaten.html">Für Kandidaten</a>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Norvia Solutions. Alle Rechte vorbehalten.</p>
+      <p>DSGVO-konform · Made in Germany</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+function updateFileName(input){
+  const el=document.getElementById('file-name');
+  if(input.files.length>0){el.textContent='Ausgewählt: '+input.files[0].name;el.style.display='block'}
+}
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
