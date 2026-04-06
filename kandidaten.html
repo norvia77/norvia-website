@@ -544,7 +544,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
     <div class="cv-form fade-in">
       <h3>Lebenslauf hochladen</h3>
       <p>Wir melden uns innerhalb von 48 Stunden bei dir.</p>
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+      <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
         <div class="form-row">
           <div class="form-group">
             <label>Vorname *</label>
@@ -598,7 +598,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
 <section class="cta-banner">
   <div class="cta-inner">
     <h2>Fragen? <em>Wir antworten schnell</em> und unkompliziert.</h2>
-    <a href="mailto:info@norvia-solutions.de" class="btn btn-white">
+    <a href="/cdn-cgi/l/email-protection#1b72757d745b7574696d727a366874776e6f72747568357f7e" class="btn btn-white">
       Kontakt aufnehmen
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </a>
@@ -636,7 +636,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 function updateFileName(input){
@@ -644,9 +644,4 @@ function updateFileName(input){
   if(input.files.length>0){el.textContent='Ausgewählt: '+input.files[0].name;el.style.display='block'}
 }
 const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-</script>
-</body>
-</html>
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible'
