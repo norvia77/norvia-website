@@ -252,7 +252,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
           </div>
           <h4>E-Mail</h4>
           <p>Schreiben Sie uns jederzeit</p>
-          <a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a>
+          <a href="/cdn-cgi/l/email-protection#31585f575e715f5e434758501c425e5d4445585e5f421f5554"><span class="__cf_email__" data-cfemail="741d1a121b341a1b06021d1559071b1801001d1b1a075a1011">[email&#160;protected]</span></a>
         </div>
         <div class="dc-card">
           <div class="dc-icon">
@@ -285,7 +285,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
           </div>
           <div class="cd-text">
             <h4>E-Mail</h4>
-            <p><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></p>
+            <p><a href="/cdn-cgi/l/email-protection#bbd2d5ddd4fbd5d4c9cdd2da96c8d4d7cecfd2d4d5c895dfde"><span class="__cf_email__" data-cfemail="d4bdbab2bb94babba6a2bdb5f9a7bbb8a1a0bdbbbaa7fab0b1">[email&#160;protected]</span></a></p>
           </div>
         </div>
         <div class="contact-detail">
@@ -308,8 +308,8 @@ footer{background:var(--navy);padding:60px 2rem 32px}
       <div class="form-card fade-in">
         <h3>Kandidaten anfragen</h3>
         <p class="form-sub">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-          <input type="hidden" name="type" value="Unternehmen">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="e980696f-ff15-4ea5-a8fc-0221b90c11fb"><input type="hidden" name="type" value="Unternehmen">
           <div class="form-row">
             <div class="form-group">
               <label>Unternehmen *</label>
@@ -362,7 +362,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
           </div>
           <div class="cd-text">
             <h4>E-Mail</h4>
-            <p><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></p>
+            <p><a href="/cdn-cgi/l/email-protection#e68f888089a6888994908f87cb95898a93928f898895c88283"><span class="__cf_email__" data-cfemail="95fcfbf3fad5fbfae7e3fcf4b8e6faf9e0e1fcfafbe6bbf1f0">[email&#160;protected]</span></a></p>
           </div>
         </div>
         <div class="contact-detail">
@@ -385,8 +385,8 @@ footer{background:var(--navy);padding:60px 2rem 32px}
       <div class="form-card fade-in">
         <h3>Kontakt aufnehmen</h3>
         <p class="form-sub">Wir melden uns innerhalb von 48 Stunden bei dir.</p>
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="type" value="Kandidat">
+        <form action="https://api.web3forms.com/submit" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="access_key" value="e980696f-ff15-4ea5-a8fc-0221b90c11fb"><input type="hidden" name="type" value="Kandidat">
           <div class="form-row">
             <div class="form-group">
               <label>Vorname *</label>
@@ -482,8 +482,8 @@ footer{background:var(--navy);padding:60px 2rem 32px}
 <section class="cta-banner">
   <div class="cta-inner">
     <h2>Noch unsicher? <em>Schreiben Sie uns einfach.</em></h2>
-    <a href="mailto:info@norvia-solutions.de" class="btn btn-white">
-      info@norvia-solutions.de
+    <a href="/cdn-cgi/l/email-protection#d9b0b7bfb699b7b6abafb0b8f4aab6b5acadb0b6b7aaf7bdbc" class="btn btn-white">
+      <span class="__cf_email__" data-cfemail="1e777078715e70716c68777f336d71726b6a7771706d307a7b">[email&#160;protected]</span>
       <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
     </a>
   </div>
@@ -520,7 +520,7 @@ footer{background:var(--navy);padding:60px 2rem 32px}
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
 function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
 
@@ -552,22 +552,4 @@ function resetType(){
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-function toggleFaq(el){
-  const item=el.parentElement;
-  const wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!wasOpen)item.classList.add('open');
-}
-
-function updateFileName(input){
-  const el=document.getElementById('file-name-kontakt');
-  if(input.files.length>0){el.textContent='Ausgewählt: '+input.files[0].name;el.style.display='block'}
-}
-
-const observer=new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
-},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
-</script>
-</body>
-</html>
+function toggleFaq(e
