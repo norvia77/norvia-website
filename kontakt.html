@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt – Norvia Solutions</title>
+<meta name="description" content="Nehmen Sie Kontakt mit Norvia Solutions auf – ob Unternehmen oder Kandidat. Wir antworten innerhalb von 24 Stunden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e1624;--navy2:#162033;--blue:#1a56db;--blue-light:#e8f0fe;
+  --off:#f7f7f5;--white:#ffffff;--text:#0e1624;--muted:#5a6478;
+  --border:#e2e6ef;--radius:10px;
+  --font-head:'Fraunces',Georgia,serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,22,36,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-head);font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:-0.01em}
+.nav-logo span{color:#5b8ff9}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.7);transition:color .2s}
+.nav-links a:hover{color:#fff}
+.nav-links a.active{color:#fff}
+.nav-cta{background:var(--blue);color:#fff !important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:500 !important;font-size:0.875rem;transition:background .2s !important}
+.nav-cta:hover{background:#1447c0 !important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem;z-index:99;border-bottom:1px solid rgba(255,255,255,0.1)}
+.mobile-menu a{display:block;padding:.75rem 0;font-size:1rem;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.07)}
+.mobile-menu a:last-child{border-bottom:none;margin-top:.5rem;color:#5b8ff9;font-weight:500}
+.mobile-menu.open{display:block}
+
+/* HERO */
+.hero{background:var(--navy);padding:140px 2rem 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:600px;height:600px;background:radial-gradient(circle,rgba(26,86,219,0.12) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:780px;margin:0 auto;position:relative;z-index:1;text-align:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(91,143,249,0.12);border:1px solid rgba(91,143,249,0.25);border-radius:100px;padding:6px 14px;font-size:0.8rem;color:#5b8ff9;font-weight:500;margin-bottom:1.75rem;letter-spacing:0.03em}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:#5b8ff9;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+h1{font-family:var(--font-head);font-size:clamp(2rem,4vw,3.2rem);font-weight:300;color:#fff;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem}
+h1 em{font-style:italic;color:#5b8ff9}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,0.6);line-height:1.75;font-weight:300;max-width:520px;margin:0 auto}
+
+/* WHO ARE YOU */
+.who-section{padding:80px 2rem;background:var(--off)}
+.who-inner{max-width:860px;margin:0 auto;text-align:center}
+.who-inner p{font-size:0.875rem;font-weight:500;color:var(--muted);margin-bottom:1.5rem;letter-spacing:0.03em;text-transform:uppercase}
+.who-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:0}
+.who-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2.5rem 2rem;cursor:pointer;transition:all .25s;text-align:left;position:relative;overflow:hidden}
+.who-card::before{content:'';position:absolute;inset:0;background:var(--blue);opacity:0;transition:opacity .25s}
+.who-card:hover{border-color:var(--blue);transform:translateY(-3px);box-shadow:0 12px 40px rgba(26,86,219,0.12)}
+.who-card.selected{border-color:var(--blue);background:var(--blue-light)}
+.who-card-icon{width:52px;height:52px;border-radius:12px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin-bottom:1.5rem;transition:all .25s}
+.who-card.selected .who-card-icon{background:var(--blue)}
+.who-card-icon svg{width:24px;height:24px;color:var(--blue);transition:color .25s}
+.who-card.selected .who-card-icon svg{color:#fff}
+.who-card h3{font-size:1.1rem;font-weight:500;margin-bottom:.5rem}
+.who-card p{font-size:0.875rem;color:var(--muted);line-height:1.65;font-weight:300}
+.who-card .card-arrow{display:inline-flex;align-items:center;gap:6px;font-size:0.82rem;font-weight:500;color:var(--blue);margin-top:1.25rem;transition:gap .2s}
+.who-card:hover .card-arrow{gap:10px}
+
+/* CONTACT FORMS */
+.forms-section{padding:80px 2rem 100px;background:var(--white)}
+.forms-inner{max-width:1160px;margin:0 auto}
+
+.form-block{display:none;grid-template-columns:1fr 1fr;gap:6rem;align-items:start}
+.form-block.active{display:grid}
+
+.form-info h2{font-family:var(--font-head);font-size:clamp(1.7rem,3vw,2.4rem);font-weight:300;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem}
+.form-info p{font-size:1rem;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:2rem}
+.contact-detail{display:flex;align-items:center;gap:.875rem;margin-bottom:1rem}
+.cd-icon{width:40px;height:40px;border-radius:8px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.cd-icon svg{width:18px;height:18px;color:var(--blue)}
+.cd-text h4{font-size:0.875rem;font-weight:500;margin-bottom:2px}
+.cd-text p{font-size:0.82rem;color:var(--muted);font-weight:300}
+.cd-text a{color:var(--blue)}
+.response-badge{display:inline-flex;align-items:center;gap:8px;background:var(--off);border:1px solid var(--border);border-radius:100px;padding:8px 16px;font-size:0.82rem;color:var(--muted);margin-top:1.5rem}
+.response-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:pulse 2s infinite}
+
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:2.5rem;box-shadow:0 4px 24px rgba(14,22,36,0.06)}
+.form-card h3{font-family:var(--font-head);font-size:1.4rem;font-weight:300;margin-bottom:.4rem;letter-spacing:-0.01em}
+.form-card .form-sub{font-size:0.85rem;color:var(--muted);margin-bottom:2rem;font-weight:300}
+.form-group{margin-bottom:1rem}
+.form-group label{display:block;font-size:0.8rem;font-weight:500;color:var(--text);margin-bottom:.4rem;letter-spacing:0.01em}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:.7rem 1rem;border:1px solid var(--border);border-radius:7px;font-size:0.875rem;font-family:var(--font-body);color:var(--text);background:var(--white);transition:border-color .2s;outline:none}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,86,219,0.08)}
+.form-group textarea{resize:vertical;min-height:90px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+.form-submit{width:100%;background:var(--blue);color:#fff;border:none;padding:.875rem 1.5rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;font-family:var(--font-body);transition:background .2s;margin-top:.5rem}
+.form-submit:hover{background:#1447c0}
+.form-note{font-size:0.75rem;color:var(--muted);text-align:center;margin-top:.75rem}
+
+/* DEFAULT STATE — no selection yet */
+.default-contact{max-width:860px;margin:0 auto}
+.default-contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
+.dc-card{padding:1.75rem;background:var(--off);border:1px solid var(--border);border-radius:var(--radius);text-align:center;transition:all .2s}
+.dc-card:hover{border-color:#aac0f5;transform:translateY(-2px)}
+.dc-icon{width:44px;height:44px;border-radius:10px;background:var(--blue-light);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem}
+.dc-icon svg{width:20px;height:20px;color:var(--blue)}
+.dc-card h4{font-size:0.875rem;font-weight:500;margin-bottom:.3rem}
+.dc-card p{font-size:0.82rem;color:var(--muted);font-weight:300;line-height:1.5}
+.dc-card a{color:var(--blue);font-size:0.82rem;font-weight:500;display:block;margin-top:.5rem}
+
+/* SECTION TAG */
+.section-tag{font-size:0.75rem;font-weight:500;letter-spacing:0.1em;color:var(--blue);text-transform:uppercase;margin-bottom:1rem}
+
+/* FAQ */
+.faq-section{padding:80px 2rem;background:var(--off)}
+.faq-inner{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+.faq-item:first-of-type{border-top:1px solid var(--border)}
+.faq-question{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 0;cursor:pointer;gap:1rem}
+.faq-question h4{font-size:0.9rem;font-weight:500;line-height:1.4}
+.faq-chevron{width:20px;height:20px;border-radius:50%;background:var(--blue-light);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .2s}
+.faq-chevron svg{width:11px;height:11px;color:var(--blue)}
+.faq-item.open .faq-chevron{transform:rotate(180deg);background:var(--blue)}
+.faq-item.open .faq-chevron svg{color:#fff}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease}
+.faq-answer p{font-size:0.875rem;color:var(--muted);line-height:1.7;padding-bottom:1.25rem;font-weight:300}
+.faq-item.open .faq-answer{max-height:200px}
+
+/* CTA BANNER */
+.cta-banner{padding:80px 2rem;background:var(--blue)}
+.cta-inner{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.cta-inner h2{font-family:var(--font-head);font-size:clamp(1.5rem,3vw,2.2rem);font-weight:300;color:#fff;letter-spacing:-0.02em;max-width:520px;line-height:1.3}
+.cta-inner h2 em{font-style:italic}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:0.8rem 1.75rem;border-radius:8px;font-size:0.9rem;font-weight:500;cursor:pointer;transition:all .2s;font-family:var(--font-body);border:none}
+.btn-white{background:#fff;color:var(--blue)}
+.btn-white:hover{background:#f0f4ff;transform:translateY(-1px)}
+.btn svg{width:16px;height:16px;flex-shrink:0}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 2rem 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-brand p{font-size:0.875rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-top:.75rem;max-width:280px;font-weight:300}
+.footer-col h5{font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.9);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:1rem}
+.footer-col a{display:block;font-size:0.875rem;color:rgba(255,255,255,0.45);padding:.3rem 0;transition:color .2s;font-weight:300}
+.footer-col a:hover{color:rgba(255,255,255,0.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:0.8rem;color:rgba(255,255,255,0.3);font-weight:300}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .who-cards{grid-template-columns:1fr}
+  .form-block{grid-template-columns:1fr;gap:3rem}
+  .form-block.active{display:grid}
+  .default-contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .hero{padding:110px 1.25rem 70px}
+  .form-row{grid-template-columns:1fr}
+  .cta-inner{flex-direction:column;text-align:center}
+  .footer-grid{grid-template-columns:1fr}
+  .footer-brand{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Norvia <span>Solutions</span></a>
+    <div class="nav-links">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="index.html#prozess">Prozess</a>
+      <a href="unternehmen.html">Für Unternehmen</a>
+      <a href="kandidaten.html">Für Kandidaten</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kontakt.html" class="nav-cta active">Kontakt</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#leistungen" onclick="closeMenu()">Leistungen</a>
+  <a href="index.html#prozess" onclick="closeMenu()">Prozess</a>
+  <a href="unternehmen.html" onclick="closeMenu()">Für Unternehmen</a>
+  <a href="kandidaten.html" onclick="closeMenu()">Für Kandidaten</a>
+  <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
+  <a href="kontakt.html" onclick="closeMenu()">Kontakt →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Kontakt</div>
+    <h1>Sprechen wir. <em>Einfach und direkt.</em></h1>
+    <p class="hero-sub">Ob Unternehmen auf der Suche nach IT-Spezialisten oder Kandidat mit dem nächsten Karriereschritt im Blick – wir antworten innerhalb von 24 Stunden.</p>
+  </div>
+</section>
+
+<!-- WHO ARE YOU -->
+<section class="who-section">
+  <div class="who-inner">
+    <p>Ich bin...</p>
+    <div class="who-cards">
+      <div class="who-card" id="card-company" onclick="selectType('company')">
+        <div class="who-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="12.01"/></svg>
+        </div>
+        <h3>Ein Unternehmen</h3>
+        <p>Wir suchen IT-Spezialisten und möchten qualifizierte Kandidaten anfragen – schnell und ohne Streuverlust.</p>
+        <span class="card-arrow">Zum Unternehmensformular <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+      <div class="who-card" id="card-candidate" onclick="selectType('candidate')">
+        <div class="who-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Ein Kandidat</h3>
+        <p>Ich suche eine neue IT-Stelle in Deutschland und möchte mehr über Möglichkeiten erfahren oder mein CV hochladen.</p>
+        <span class="card-arrow">Zum Kandidatenformular <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMS SECTION -->
+<section class="forms-section" id="formbereich">
+  <div class="forms-inner">
+
+    <!-- DEFAULT: no selection -->
+    <div id="default-view" class="default-contact fade-in">
+      <p class="section-tag" style="text-align:center">Direkt Kontakt aufnehmen</p>
+      <h2 style="font-family:var(--font-head);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;letter-spacing:-0.02em;text-align:center;margin-bottom:.5rem">Oder erreichen Sie uns direkt</h2>
+      <p style="text-align:center;font-size:0.9rem;color:var(--muted);font-weight:300;margin-bottom:2.5rem">Wählen Sie oben eine Option für das passende Formular, oder kontaktieren Sie uns direkt.</p>
+      <div class="default-contact-grid">
+        <div class="dc-card">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <h4>E-Mail</h4>
+          <p>Schreiben Sie uns jederzeit</p>
+          <a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a>
+        </div>
+        <div class="dc-card">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h4>Telefon</h4>
+          <p>Mo–Fr, schnelle Rückmeldung</p>
+          <a href="tel:+491631694817">+49 163 169 4817</a>
+        </div>
+        <div class="dc-card">
+          <div class="dc-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h4>Reaktionszeit</h4>
+          <p>Wir antworten immer</p>
+          <a href="#">Innerhalb von 24 Stunden</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- COMPANY FORM -->
+    <div class="form-block" id="form-company">
+      <div class="form-info fade-in">
+        <p class="section-tag">Für Unternehmen</p>
+        <h2>Kandidaten anfragen – schnell und gezielt.</h2>
+        <p>Beschreiben Sie Ihre offene Rolle kurz. Wir melden uns innerhalb von 24 Stunden und können in der Regel innerhalb von 48 Stunden erste vorgeprüfte Profile liefern.</p>
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div class="cd-text">
+            <h4>E-Mail</h4>
+            <p><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .84h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <div class="cd-text">
+            <h4>Telefon</h4>
+            <p><a href="tel:+491631694817">+49 163 169 4817</a></p>
+          </div>
+        </div>
+        <div class="response-badge">
+          <span class="response-dot"></span>
+          Antwort innerhalb von 24 Stunden
+        </div>
+        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--muted)">
+          <span style="cursor:pointer;color:var(--blue);font-weight:500" onclick="resetType()">← Zurück zur Auswahl</span>
+        </p>
+      </div>
+      <div class="form-card fade-in">
+        <h3>Kandidaten anfragen</h3>
+        <p class="form-sub">Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="type" value="Unternehmen">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Unternehmen *</label>
+              <input type="text" name="company" placeholder="Firma GmbH" required>
+            </div>
+            <div class="form-group">
+              <label>Ansprechpartner *</label>
+              <input type="text" name="name" placeholder="Max Müller" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-Mail *</label>
+            <input type="email" name="email" placeholder="max@firma.de" required>
+          </div>
+          <div class="form-group">
+            <label>Telefon</label>
+            <input type="tel" name="phone" placeholder="+49 ...">
+          </div>
+          <div class="form-group">
+            <label>Gesuchter Fachbereich *</label>
+            <select name="role" required>
+              <option value="">Bitte wählen</option>
+              <option>Cyber Security</option>
+              <option>IT / DevOps</option>
+              <option>SAP</option>
+              <option>Transport & Logistik</option>
+              <option>Mehrere Bereiche</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Ihre Anforderungen</label>
+            <textarea name="message" placeholder="Rolle, Must-haves, Gehaltsrahmen, gewünschter Starttermin..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Anfrage absenden →</button>
+          <p class="form-note">Vertraulich · DSGVO-konform · Antwort in 24h</p>
+        </form>
+      </div>
+    </div>
+
+    <!-- CANDIDATE FORM -->
+    <div class="form-block" id="form-candidate">
+      <div class="form-info fade-in">
+        <p class="section-tag">Für Kandidaten</p>
+        <h2>Dein nächster Schritt. Wir begleiten dich.</h2>
+        <p>Schreib uns kurz, was du suchst – oder lade direkt deinen Lebenslauf hoch. Wir melden uns innerhalb von 48 Stunden mit passenden Möglichkeiten. Kostenlos und diskret.</p>
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+          <div class="cd-text">
+            <h4>E-Mail</h4>
+            <p><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></p>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="cd-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="cd-text">
+            <h4>Diskret & kostenlos</h4>
+            <p>Keine Kosten, keine Weitergabe ohne Zustimmung</p>
+          </div>
+        </div>
+        <div class="response-badge">
+          <span class="response-dot"></span>
+          Rückmeldung innerhalb von 48 Stunden
+        </div>
+        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--muted)">
+          <span style="cursor:pointer;color:var(--blue);font-weight:500" onclick="resetType()">← Zurück zur Auswahl</span>
+        </p>
+      </div>
+      <div class="form-card fade-in">
+        <h3>Kontakt aufnehmen</h3>
+        <p class="form-sub">Wir melden uns innerhalb von 48 Stunden bei dir.</p>
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="type" value="Kandidat">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Vorname *</label>
+              <input type="text" name="firstname" placeholder="Max" required>
+            </div>
+            <div class="form-group">
+              <label>Nachname *</label>
+              <input type="text" name="lastname" placeholder="Müller" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>E-Mail *</label>
+            <input type="email" name="email" placeholder="max@beispiel.de" required>
+          </div>
+          <div class="form-group">
+            <label>Fachbereich *</label>
+            <select name="field" required>
+              <option value="">Bitte wählen</option>
+              <option>Cyber Security</option>
+              <option>IT / DevOps</option>
+              <option>SAP</option>
+              <option>Transport & Logistik</option>
+              <option>Sonstiges</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Lebenslauf (optional)</label>
+            <div style="border:2px dashed var(--border);border-radius:var(--radius);padding:1.5rem;text-align:center;cursor:pointer;transition:all .2s;background:var(--off)" onclick="document.getElementById('cv-file-kontakt').click()" id="upload-zone">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28" style="color:var(--muted);display:block;margin:0 auto .5rem"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><path d="M17 8l-5-5-5 5M12 3v12"/></svg>
+              <p style="font-size:0.82rem;color:var(--muted);font-weight:300"><strong style="font-weight:500;color:var(--text);display:block;margin-bottom:2px">Datei auswählen</strong>PDF, DOC, DOCX – max. 5 MB</p>
+            </div>
+            <input type="file" id="cv-file-kontakt" name="cv" accept=".pdf,.doc,.docx" style="display:none" onchange="updateFileName(this)">
+            <div id="file-name-kontakt" style="font-size:0.8rem;color:var(--muted);margin-top:6px;display:none"></div>
+          </div>
+          <div class="form-group">
+            <label>Nachricht</label>
+            <textarea name="message" placeholder="Verfügbarkeit, Gehaltsvorstellung, bevorzugtes Arbeitsmodell..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">Nachricht absenden →</button>
+          <p class="form-note">Kostenlos · Diskret · DSGVO-konform</p>
+        </form>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <p class="section-tag fade-in" style="text-align:center">Häufige Fragen</p>
+    <h2 style="font-family:var(--font-head);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;letter-spacing:-0.02em;text-align:center;margin-bottom:2.5rem" class="fade-in">Schnelle Antworten auf häufige Fragen</h2>
+
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Wie schnell erhalte ich erste Kandidatenprofile?</h4>
+        <div class="faq-chevron"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></div>
+      </div>
+      <div class="faq-answer"><p>In der Regel liefern wir erste vorgeprüfte Profile innerhalb von 48 Stunden nach dem Briefing-Gespräch. Für sehr spezifische Rollen kann es etwas länger dauern – wir kommunizieren immer transparent über den Zeitplan.</p></div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Was kostet die Vermittlung für Kandidaten?</h4>
+        <div class="faq-chevron"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></div>
+      </div>
+      <div class="faq-answer"><p>Für Kandidaten ist unser Service vollständig kostenlos. Unsere Vergütung kommt ausschließlich vom einstellenden Unternehmen – erst bei erfolgreicher Vermittlung.</p></div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Wird mein Profil ohne meine Zustimmung weitergegeben?</h4>
+        <div class="faq-chevron"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></div>
+      </div>
+      <div class="faq-answer"><p>Nein, niemals. Ihr Profil wird ausschließlich mit Ihrer ausdrücklichen Zustimmung an ein Unternehmen weitergeleitet. Wir informieren Sie immer vorab, welches Unternehmen Interesse hat.</p></div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>In welchen Regionen sind Sie aktiv?</h4>
+        <div class="faq-chevron"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></div>
+      </div>
+      <div class="faq-answer"><p>Wir fokussieren uns ausschließlich auf den DACH-Markt – Deutschland, Österreich und die Schweiz. Der gesamte Prozess läuft remote, sodass kein Standort eine Rolle spielt.</p></div>
+    </div>
+    <div class="faq-item fade-in">
+      <div class="faq-question" onclick="toggleFaq(this)">
+        <h4>Welche Fachbereiche decken Sie ab?</h4>
+        <div class="faq-chevron"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l4 4 4-4"/></svg></div>
+      </div>
+      <div class="faq-answer"><p>Unsere Schwerpunkte sind Cyber Security, IT & DevOps, SAP sowie Transport & Logistik. Innerhalb dieser Bereiche besetzen wir Rollen von Junior bis Senior- und Lead-Niveau.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="cta-inner">
+    <h2>Noch unsicher? <em>Schreiben Sie uns einfach.</em></h2>
+    <a href="mailto:info@norvia-solutions.de" class="btn btn-white">
+      info@norvia-solutions.de
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="font-size:1.1rem">Norvia <span>Solutions</span></div>
+        <p>Remote Recruiting für den deutschen Markt. Spezialisiert auf IT, Cyber Security, SAP und Logistik.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <a href="index.html#leistungen">Cyber Security</a>
+        <a href="index.html#leistungen">IT & DevOps</a>
+        <a href="index.html#leistungen">SAP</a>
+        <a href="index.html#leistungen">Transport & Logistik</a>
+      </div>
+      <div class="footer-col">
+        <h5>Unternehmen</h5>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="unternehmen.html">Für Unternehmen</a>
+        <a href="kandidaten.html">Für Kandidaten</a>
+        <a href="ueber-uns.html#impressum">Impressum</a>
+        <a href="#">Datenschutz</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Norvia Solutions. Alle Rechte vorbehalten.</p>
+      <p>DSGVO-konform · Made in Germany</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+function selectType(type){
+  document.getElementById('card-company').classList.remove('selected');
+  document.getElementById('card-candidate').classList.remove('selected');
+  document.getElementById('form-company').classList.remove('active');
+  document.getElementById('form-candidate').classList.remove('active');
+  document.getElementById('default-view').style.display='none';
+
+  if(type==='company'){
+    document.getElementById('card-company').classList.add('selected');
+    document.getElementById('form-company').classList.add('active');
+  } else {
+    document.getElementById('card-candidate').classList.add('selected');
+    document.getElementById('form-candidate').classList.add('active');
+  }
+  setTimeout(()=>{
+    document.getElementById('formbereich').scrollIntoView({behavior:'smooth',block:'start'});
+  },100);
+}
+
+function resetType(){
+  document.getElementById('card-company').classList.remove('selected');
+  document.getElementById('card-candidate').classList.remove('selected');
+  document.getElementById('form-company').classList.remove('active');
+  document.getElementById('form-candidate').classList.remove('active');
+  document.getElementById('default-view').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggleFaq(el){
+  const item=el.parentElement;
+  const wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!wasOpen)item.classList.add('open');
+}
+
+function updateFileName(input){
+  const el=document.getElementById('file-name-kontakt');
+  if(input.files.length>0){el.textContent='Ausgewählt: '+input.files[0].name;el.style.display='block'}
+}
+
+const observer=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
