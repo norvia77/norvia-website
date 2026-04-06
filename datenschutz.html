@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung – Norvia Solutions</title>
+<meta name="description" content="Datenschutzerklärung von Norvia Solutions gemäß DSGVO – Informationen zur Verarbeitung personenbezogener Daten.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0e1624;--blue:#1a56db;--blue-light:#e8f0fe;
+  --off:#f7f7f5;--white:#ffffff;--text:#0e1624;--muted:#5a6478;
+  --border:#e2e6ef;--radius:10px;
+  --font-head:'Fraunces',Georgia,serif;--font-body:'DM Sans',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,22,36,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,0.07)}
+.nav-inner{max-width:1160px;margin:0 auto;padding:0 2rem;height:64px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-family:var(--font-head);font-size:1.25rem;font-weight:600;color:#fff;letter-spacing:-0.01em}
+.nav-logo span{color:#5b8ff9}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.7);transition:color .2s;text-decoration:none}
+.nav-links a:hover{color:#fff}
+.nav-cta{background:var(--blue);color:#fff !important;padding:0.5rem 1.25rem;border-radius:6px;font-weight:500 !important}
+.nav-cta:hover{background:#1447c0 !important}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:64px;left:0;right:0;background:var(--navy);padding:1.5rem 2rem;z-index:99;border-bottom:1px solid rgba(255,255,255,0.1)}
+.mobile-menu a{display:block;padding:.75rem 0;font-size:1rem;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.07);text-decoration:none}
+.mobile-menu a:last-child{border-bottom:none;margin-top:.5rem;color:#5b8ff9;font-weight:500}
+.mobile-menu.open{display:block}
+
+/* HERO */
+.hero{background:var(--navy);padding:120px 2rem 70px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(26,86,219,0.1) 0%,transparent 70%);pointer-events:none}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:860px;margin:0 auto;position:relative;z-index:1}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(91,143,249,0.12);border:1px solid rgba(91,143,249,0.25);border-radius:100px;padding:6px 14px;font-size:0.8rem;color:#5b8ff9;font-weight:500;margin-bottom:1.5rem;letter-spacing:0.03em}
+.hero-inner h1{font-family:var(--font-head);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:#fff;line-height:1.2;letter-spacing:-0.02em;margin-bottom:1rem}
+.hero-inner p{font-size:0.9rem;color:rgba(255,255,255,0.5);font-weight:300;line-height:1.6}
+.hero-inner p span{color:rgba(255,255,255,0.35);margin:0 6px}
+
+/* TOC */
+.toc-section{padding:48px 2rem 0;background:var(--off);border-bottom:1px solid var(--border)}
+.toc-inner{max-width:860px;margin:0 auto;padding-bottom:32px}
+.toc-label{font-size:0.72rem;font-weight:500;letter-spacing:0.1em;color:var(--muted);text-transform:uppercase;margin-bottom:1rem}
+.toc-list{display:flex;flex-wrap:wrap;gap:.5rem}
+.toc-link{font-size:0.82rem;padding:5px 12px;border-radius:100px;border:1px solid var(--border);color:var(--muted);background:var(--white);transition:all .2s;text-decoration:none}
+.toc-link:hover{border-color:var(--blue);color:var(--blue);text-decoration:none}
+
+/* CONTENT */
+.content-section{padding:64px 2rem 100px;background:var(--white)}
+.content-inner{max-width:860px;margin:0 auto;display:grid;grid-template-columns:200px 1fr;gap:4rem;align-items:start}
+.sidebar{position:sticky;top:90px}
+.sidebar-nav{display:flex;flex-direction:column;gap:4px}
+.sidebar-link{font-size:0.8rem;color:var(--muted);padding:.4rem .75rem;border-radius:6px;transition:all .2s;text-decoration:none;border-left:2px solid transparent}
+.sidebar-link:hover{color:var(--text);background:var(--off);text-decoration:none}
+.sidebar-link.active{color:var(--blue);border-left-color:var(--blue);background:var(--blue-light)}
+
+/* PROSE */
+.prose{max-width:620px}
+.dsg-section{margin-bottom:3rem;padding-bottom:3rem;border-bottom:1px solid var(--border)}
+.dsg-section:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.dsg-section h2{font-family:var(--font-head);font-size:1.35rem;font-weight:300;letter-spacing:-0.01em;margin-bottom:1rem;line-height:1.3;scroll-margin-top:90px}
+.dsg-section h3{font-size:0.9rem;font-weight:500;margin:1.5rem 0 .5rem;color:var(--text)}
+.dsg-section p{font-size:0.9rem;color:var(--muted);line-height:1.8;margin-bottom:.875rem;font-weight:300}
+.dsg-section p:last-child{margin-bottom:0}
+.dsg-section ul{margin:.5rem 0 .875rem 0;padding:0;list-style:none}
+.dsg-section ul li{font-size:0.875rem;color:var(--muted);line-height:1.7;padding:.25rem 0 .25rem 1.25rem;position:relative;font-weight:300}
+.dsg-section ul li::before{content:'–';position:absolute;left:0;color:var(--blue)}
+.dsg-section a{color:var(--blue)}
+.highlight-box{background:var(--blue-light);border:1px solid #aac0f5;border-radius:var(--radius);padding:1.25rem 1.5rem;margin:1rem 0}
+.highlight-box p{color:#0c447c;margin-bottom:0}
+.highlight-box strong{font-weight:500;display:block;margin-bottom:.25rem;color:#042C53}
+.contact-block{background:var(--off);border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;margin-top:1rem}
+.contact-block h4{font-size:.875rem;font-weight:500;margin-bottom:.875rem}
+.contact-row{display:flex;gap:.75rem;margin-bottom:.5rem;font-size:.875rem}
+.contact-row:last-child{margin-bottom:0}
+.contact-label{color:var(--muted);font-weight:300;min-width:80px;flex-shrink:0}
+.contact-val{color:var(--text);font-weight:400}
+.last-updated{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;color:var(--muted);background:var(--off);padding:5px 12px;border-radius:100px;margin-bottom:2rem;border:1px solid var(--border)}
+
+/* FOOTER */
+footer{background:var(--navy);padding:60px 2rem 32px}
+.footer-inner{max-width:1160px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
+.footer-brand p{font-size:.875rem;color:rgba(255,255,255,0.45);line-height:1.7;margin-top:.75rem;max-width:280px;font-weight:300}
+.footer-col h5{font-size:.8rem;font-weight:500;color:rgba(255,255,255,0.9);letter-spacing:.05em;text-transform:uppercase;margin-bottom:1rem}
+.footer-col a{display:block;font-size:.875rem;color:rgba(255,255,255,0.45);padding:.3rem 0;transition:color .2s;font-weight:300;text-decoration:none}
+.footer-col a:hover{color:rgba(255,255,255,0.85)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{font-size:.8rem;color:rgba(255,255,255,0.3);font-weight:300}
+
+@media(max-width:900px){
+  .nav-links{display:none}.nav-hamburger{display:flex}
+  .content-inner{grid-template-columns:1fr}
+  .sidebar{display:none}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}.footer-brand{grid-column:1/-1}
+}
+@media(max-width:560px){
+  .hero{padding:100px 1.25rem 60px}
+  .content-section{padding:40px 1.25rem 80px}
+  .footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Norvia <span>Solutions</span></a>
+    <div class="nav-links">
+      <a href="index.html#leistungen">Leistungen</a>
+      <a href="unternehmen.html">Für Unternehmen</a>
+      <a href="kandidaten.html">Für Kandidaten</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="kontakt.html" class="nav-cta">Kontakt</a>
+    </div>
+    <div class="nav-hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#leistungen" onclick="closeMenu()">Leistungen</a>
+  <a href="unternehmen.html" onclick="closeMenu()">Für Unternehmen</a>
+  <a href="kandidaten.html" onclick="closeMenu()">Für Kandidaten</a>
+  <a href="ueber-uns.html" onclick="closeMenu()">Über uns</a>
+  <a href="kontakt.html" onclick="closeMenu()">Kontakt →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div class="hero-tag">Rechtliches</div>
+    <h1>Datenschutzerklärung</h1>
+    <p>Norvia Solutions <span>·</span> Behar Nela <span>·</span> Stand: Januar 2025 <span>·</span> Gemäß DSGVO & BDSG</p>
+  </div>
+</section>
+
+<!-- TOC -->
+<div class="toc-section">
+  <div class="toc-inner">
+    <p class="toc-label">Inhalt</p>
+    <div class="toc-list">
+      <a href="#verantwortlicher" class="toc-link">1. Verantwortlicher</a>
+      <a href="#grundsaetze" class="toc-link">2. Grundsätze</a>
+      <a href="#erhobene-daten" class="toc-link">3. Erhobene Daten</a>
+      <a href="#zwecke" class="toc-link">4. Verarbeitungszwecke</a>
+      <a href="#rechtsgrundlagen" class="toc-link">5. Rechtsgrundlagen</a>
+      <a href="#weitergabe" class="toc-link">6. Datenweitergabe</a>
+      <a href="#speicherdauer" class="toc-link">7. Speicherdauer</a>
+      <a href="#rechte" class="toc-link">8. Ihre Rechte</a>
+      <a href="#cookies" class="toc-link">9. Cookies</a>
+      <a href="#hosting" class="toc-link">10. Hosting</a>
+      <a href="#kontaktformular" class="toc-link">11. Kontaktformular</a>
+      <a href="#aenderungen" class="toc-link">12. Änderungen</a>
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<section class="content-section">
+  <div class="content-inner">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+      <div class="sidebar-nav">
+        <a href="#verantwortlicher" class="sidebar-link">1. Verantwortlicher</a>
+        <a href="#grundsaetze" class="sidebar-link">2. Grundsätze</a>
+        <a href="#erhobene-daten" class="sidebar-link">3. Erhobene Daten</a>
+        <a href="#zwecke" class="sidebar-link">4. Verarbeitungszwecke</a>
+        <a href="#rechtsgrundlagen" class="sidebar-link">5. Rechtsgrundlagen</a>
+        <a href="#weitergabe" class="sidebar-link">6. Datenweitergabe</a>
+        <a href="#speicherdauer" class="sidebar-link">7. Speicherdauer</a>
+        <a href="#rechte" class="sidebar-link">8. Ihre Rechte</a>
+        <a href="#cookies" class="sidebar-link">9. Cookies</a>
+        <a href="#hosting" class="sidebar-link">10. Hosting</a>
+        <a href="#kontaktformular" class="sidebar-link">11. Kontaktformular</a>
+        <a href="#aenderungen" class="sidebar-link">12. Änderungen</a>
+      </div>
+    </div>
+
+    <!-- PROSE -->
+    <div class="prose">
+
+      <div class="last-updated">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" width="13" height="13"><circle cx="8" cy="8" r="6"/><path d="M8 5v3l2 1.5"/></svg>
+        Zuletzt aktualisiert: Januar 2025
+      </div>
+
+      <!-- 1 -->
+      <div class="dsg-section" id="verantwortlicher">
+        <h2>1. Verantwortlicher</h2>
+        <p>Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) und anderer nationaler Datenschutzgesetze sowie sonstiger datenschutzrechtlicher Bestimmungen ist:</p>
+        <div class="contact-block">
+          <h4>Norvia Solutions</h4>
+          <div class="contact-row"><span class="contact-label">Inhaber</span><span class="contact-val">Behar Nela</span></div>
+          <div class="contact-row"><span class="contact-label">Adresse</span><span class="contact-val">Glonner Str. 7a, 85640 Putzbrunn</span></div>
+          <div class="contact-row"><span class="contact-label">E-Mail</span><span class="contact-val"><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></span></div>
+          <div class="contact-row"><span class="contact-label">Telefon</span><span class="contact-val"><a href="tel:+491631694817">+49 163 169 4817</a></span></div>
+          <div class="contact-row"><span class="contact-label">Website</span><span class="contact-val"><a href="https://www.norvia-solutions.de">www.norvia-solutions.de</a></span></div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="dsg-section" id="grundsaetze">
+        <h2>2. Grundsätze der Datenverarbeitung</h2>
+        <p>Norvia Solutions nimmt den Schutz Ihrer persönlichen Daten sehr ernst und behandelt Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+        <p>Wir verarbeiten personenbezogene Daten nur, soweit dies gesetzlich erlaubt ist oder Sie in die Datenverarbeitung eingewilligt haben. Wir erheben und verarbeiten nur die Daten, die für den jeweiligen Zweck notwendig sind (Datensparsamkeit).</p>
+        <div class="highlight-box">
+          <p><strong>Grundprinzip</strong>Ihre Daten werden ausschließlich zum Zweck der Personalvermittlung verarbeitet und niemals ohne Ihre ausdrückliche Zustimmung an Dritte weitergegeben.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="dsg-section" id="erhobene-daten">
+        <h2>3. Erhobene Daten</h2>
+        <h3>3.1 Beim Besuch unserer Website</h3>
+        <p>Beim Aufrufen unserer Website werden durch den Browser automatisch folgende Daten an unseren Server übermittelt:</p>
+        <ul>
+          <li>IP-Adresse des anfragenden Rechners</li>
+          <li>Datum und Uhrzeit des Zugriffs</li>
+          <li>Name und URL der abgerufenen Datei</li>
+          <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+          <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+        </ul>
+        <p>Diese Daten werden ausschließlich zur Sicherstellung eines störungsfreien Betriebs der Website sowie zur Verbesserung unseres Angebots ausgewertet und ermöglichen uns keine Rückschlüsse auf Ihre Person.</p>
+
+        <h3>3.2 Bei Nutzung unserer Kontaktformulare</h3>
+        <p>Wenn Sie uns über unsere Kontaktformulare kontaktieren, erheben wir folgende Daten:</p>
+        <ul>
+          <li>Vor- und Nachname</li>
+          <li>E-Mail-Adresse</li>
+          <li>Telefonnummer (optional)</li>
+          <li>Unternehmen (bei Unternehmensanfragen)</li>
+          <li>Gesuchter Fachbereich oder Position</li>
+          <li>Inhalt der Nachricht</li>
+          <li>Hochgeladene Dokumente (Lebenslauf, sofern übermittelt)</li>
+        </ul>
+
+        <h3>3.3 Bei der CV-Übermittlung</h3>
+        <p>Wenn Sie uns Ihren Lebenslauf übermitteln, verarbeiten wir die darin enthaltenen personenbezogenen Daten ausschließlich zum Zweck der Personalvermittlung. Dazu können gehören: Name, Adresse, Kontaktdaten, Ausbildung, Berufserfahrung, Qualifikationen und sonstige von Ihnen freiwillig angegebene Informationen.</p>
+      </div>
+
+      <!-- 4 -->
+      <div class="dsg-section" id="zwecke">
+        <h2>4. Zwecke der Verarbeitung</h2>
+        <p>Wir verarbeiten Ihre personenbezogenen Daten zu folgenden Zwecken:</p>
+        <ul>
+          <li>Durchführung und Abwicklung von Personalvermittlungsleistungen</li>
+          <li>Beantwortung von Anfragen und Kontaktaufnahme</li>
+          <li>Matching von Kandidatenprofilen mit offenen Positionen</li>
+          <li>Vorbereitung und Begleitung von Bewerbungsprozessen</li>
+          <li>Erfüllung vertraglicher Pflichten gegenüber unseren Unternehmenskunden</li>
+          <li>Verbesserung unserer Dienstleistungen</li>
+          <li>Erfüllung gesetzlicher Verpflichtungen</li>
+        </ul>
+        <p>Eine Verarbeitung zu anderen als den oben genannten Zwecken findet nicht statt, sofern kein gesetzlicher Erlaubnissatz vorliegt oder Sie nicht eingewilligt haben.</p>
+      </div>
+
+      <!-- 5 -->
+      <div class="dsg-section" id="rechtsgrundlagen">
+        <h2>5. Rechtsgrundlagen der Verarbeitung</h2>
+        <p>Die Verarbeitung Ihrer personenbezogenen Daten erfolgt auf Basis folgender Rechtsgrundlagen der DSGVO:</p>
+        <ul>
+          <li><strong style="font-weight:500;color:var(--text)">Art. 6 Abs. 1 lit. a DSGVO</strong> – Einwilligung: Soweit Sie uns eine Einwilligung zur Verarbeitung Ihrer personenbezogenen Daten erteilt haben.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Art. 6 Abs. 1 lit. b DSGVO</strong> – Vertragserfüllung: Soweit die Verarbeitung zur Erfüllung eines Vertrags oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Art. 6 Abs. 1 lit. c DSGVO</strong> – Rechtliche Verpflichtung: Soweit wir einer rechtlichen Verpflichtung unterliegen.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Art. 6 Abs. 1 lit. f DSGVO</strong> – Berechtigte Interessen: Soweit die Verarbeitung zur Wahrung unserer berechtigten Interessen erforderlich ist.</li>
+        </ul>
+        <p>Im Bereich der Personalvermittlung gilt zusätzlich § 26 BDSG als Rechtsgrundlage für die Verarbeitung von Beschäftigtendaten.</p>
+      </div>
+
+      <!-- 6 -->
+      <div class="dsg-section" id="weitergabe">
+        <h2>6. Datenweitergabe an Dritte</h2>
+        <p>Ihre personenbezogenen Daten werden grundsätzlich nicht ohne Ihre ausdrückliche und vorherige Zustimmung an Dritte weitergegeben. Dies gilt insbesondere für die Weitergabe von Kandidatenprofilen an potenzielle Arbeitgeber.</p>
+        <p>Eine Weitergabe kann in folgenden Fällen erfolgen:</p>
+        <ul>
+          <li>Nach Ihrer ausdrücklichen Einwilligung an konkrete Unternehmen im Rahmen der Personalvermittlung</li>
+          <li>An Dienstleister, die uns bei der Erbringung unserer Leistungen unterstützen (z.B. Formularverarbeitungsdienste), soweit diese vertraglich zur Einhaltung der DSGVO verpflichtet sind</li>
+          <li>Wenn wir gesetzlich dazu verpflichtet sind oder behördliche Anordnungen vorliegen</li>
+        </ul>
+        <h3>Formspree (Formularverarbeitung)</h3>
+        <p>Für die Verarbeitung von Kontaktformularen nutzen wir den Dienst Formspree (Formspree, Inc., USA). Bei der Nutzung unserer Kontaktformulare werden Ihre eingegebenen Daten an Formspree übermittelt und dort verarbeitet. Formspree ist nach dem EU-US Data Privacy Framework zertifiziert. Weitere Informationen finden Sie unter: <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener">formspree.io/legal/privacy-policy</a></p>
+        <h3>GitHub Pages (Hosting)</h3>
+        <p>Unsere Website wird über GitHub Pages (GitHub, Inc., USA) gehostet. Beim Aufruf der Website werden die oben unter 3.1 genannten technischen Daten an GitHub übermittelt. Weitere Informationen finden Sie unter: <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection" target="_blank" rel="noopener">GitHub Pages Datenschutz</a></p>
+      </div>
+
+      <!-- 7 -->
+      <div class="dsg-section" id="speicherdauer">
+        <h2>7. Speicherdauer</h2>
+        <p>Wir speichern personenbezogene Daten nur so lange, wie es für die jeweiligen Zwecke erforderlich ist oder wie es gesetzliche Aufbewahrungsfristen vorschreiben.</p>
+        <ul>
+          <li>Kontaktanfragen und allgemeine Korrespondenz: bis zu 3 Jahre nach Abschluss des Vorgangs</li>
+          <li>Bewerbungsunterlagen und Kandidatenprofile: bis zu 6 Monate nach Abschluss des Vermittlungsprozesses, sofern keine längere Aufbewahrung vereinbart wurde</li>
+          <li>Aktive Kandidatenprofile im Talentpool: bis zum Widerruf Ihrer Einwilligung oder auf Anfrage</li>
+          <li>Gesetzlich vorgeschriebene Aufbewahrungsfristen (z.B. steuerliche Unterlagen): gemäß den gesetzlichen Vorgaben (in der Regel 6–10 Jahre)</li>
+        </ul>
+        <p>Nach Ablauf der Speicherfrist werden Ihre Daten routinemäßig und sicher gelöscht, sofern keine gesetzliche Pflicht zur weiteren Aufbewahrung besteht.</p>
+      </div>
+
+      <!-- 8 -->
+      <div class="dsg-section" id="rechte">
+        <h2>8. Ihre Rechte als betroffene Person</h2>
+        <p>Als betroffene Person stehen Ihnen nach der DSGVO folgende Rechte zu:</p>
+        <ul>
+          <li><strong style="font-weight:500;color:var(--text)">Auskunftsrecht (Art. 15 DSGVO):</strong> Sie haben das Recht, Auskunft über die von uns verarbeiteten personenbezogenen Daten zu erhalten.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Berichtigungsrecht (Art. 16 DSGVO):</strong> Sie haben das Recht, unrichtige Daten berichtigen zu lassen.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Löschungsrecht (Art. 17 DSGVO):</strong> Sie haben das Recht, die Löschung Ihrer personenbezogenen Daten zu verlangen.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Einschränkungsrecht (Art. 18 DSGVO):</strong> Sie haben das Recht, die Einschränkung der Verarbeitung zu verlangen.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Datenübertragbarkeit (Art. 20 DSGVO):</strong> Sie haben das Recht, Ihre Daten in einem strukturierten, gängigen Format zu erhalten.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Widerspruchsrecht (Art. 21 DSGVO):</strong> Sie haben das Recht, der Verarbeitung Ihrer Daten zu widersprechen.</li>
+          <li><strong style="font-weight:500;color:var(--text)">Widerrufsrecht:</strong> Soweit die Verarbeitung auf einer Einwilligung basiert, können Sie diese jederzeit widerrufen.</li>
+        </ul>
+        <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:</p>
+        <div class="contact-block">
+          <div class="contact-row"><span class="contact-label">E-Mail</span><span class="contact-val"><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></span></div>
+          <div class="contact-row"><span class="contact-label">Telefon</span><span class="contact-val"><a href="tel:+491631694817">+49 163 169 4817</a></span></div>
+        </div>
+        <h3>Beschwerderecht</h3>
+        <p>Sie haben das Recht, sich bei einer Aufsichtsbehörde zu beschweren. Die zuständige Aufsichtsbehörde für Bayern ist:</p>
+        <div class="contact-block">
+          <h4>Bayerisches Landesamt für Datenschutzaufsicht (BayLDA)</h4>
+          <div class="contact-row"><span class="contact-label">Adresse</span><span class="contact-val">Promenade 18, 91522 Ansbach</span></div>
+          <div class="contact-row"><span class="contact-label">Website</span><span class="contact-val"><a href="https://www.lda.bayern.de" target="_blank" rel="noopener">www.lda.bayern.de</a></span></div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="dsg-section" id="cookies">
+        <h2>9. Cookies</h2>
+        <p>Unsere Website verwendet keine Tracking-Cookies oder Cookies von Drittanbietern zu Werbe- oder Analysezwecken. Wir setzen ausschließlich technisch notwendige Cookies ein, die für den Betrieb der Website erforderlich sind.</p>
+        <p>Technisch notwendige Cookies werden ohne Ihre Einwilligung gesetzt, da sie für den Betrieb der Website unerlässlich sind. Sie können die Verwendung von Cookies in Ihrem Browser deaktivieren oder einschränken; dies kann jedoch die Funktionalität unserer Website beeinträchtigen.</p>
+        <div class="highlight-box">
+          <p><strong>Kein Google Analytics, kein Facebook Pixel</strong>Wir verwenden keine Tracking- oder Analyse-Tools von Drittanbietern. Ihr Besuch auf unserer Website wird nicht an externe Dienste übertragen.</p>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="dsg-section" id="hosting">
+        <h2>10. Hosting & technische Infrastruktur</h2>
+        <p>Diese Website wird über <strong style="font-weight:500;color:var(--text)">GitHub Pages</strong> (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA) gehostet. GitHub ist ein Tochterunternehmen von Microsoft.</p>
+        <p>Beim Aufruf unserer Website werden automatisch technische Verbindungsdaten (IP-Adresse, Browser-Informationen, Uhrzeit) an GitHub-Server übermittelt. GitHub verarbeitet diese Daten gemäß seiner Datenschutzrichtlinie. Eine Datenübertragung in die USA findet im Rahmen der Standardvertragsklauseln der EU-Kommission statt.</p>
+        <p>Informationen zur Datenverarbeitung durch GitHub finden Sie unter: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Datenschutzerklärung</a></p>
+      </div>
+
+      <!-- 11 -->
+      <div class="dsg-section" id="kontaktformular">
+        <h2>11. Kontaktformulare & E-Mail-Kontakt</h2>
+        <p>Wenn Sie uns über unsere Kontaktformulare oder per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten zum Zweck der Bearbeitung Ihrer Anfrage gespeichert und verarbeitet.</p>
+        <p>Die Formulardaten werden über den Dienst Formspree übermittelt. Formspree leitet Ihre Eingaben als E-Mail an uns weiter. Eine Speicherung der Formulardaten durch Formspree über die Übermittlung hinaus findet gemäß den Nutzungsbedingungen von Formspree statt.</p>
+        <p>Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+        <p>Sie können der Verarbeitung Ihrer Daten jederzeit widersprechen, indem Sie uns per E-Mail an <a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a> kontaktieren. In diesem Fall werden wir die Kommunikation einstellen und Ihre Daten löschen, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+      </div>
+
+      <!-- 12 -->
+      <div class="dsg-section" id="aenderungen">
+        <h2>12. Änderungen dieser Datenschutzerklärung</h2>
+        <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie stets den aktuellen rechtlichen Anforderungen entsprechen zu lassen oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen.</p>
+        <p>Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung. Das Datum der letzten Aktualisierung ist oben auf dieser Seite vermerkt.</p>
+        <p>Bei Fragen zur Erhebung, Verarbeitung oder Nutzung Ihrer personenbezogenen Daten wenden Sie sich jederzeit an uns:</p>
+        <div class="contact-block">
+          <div class="contact-row"><span class="contact-label">E-Mail</span><span class="contact-val"><a href="mailto:info@norvia-solutions.de">info@norvia-solutions.de</a></span></div>
+          <div class="contact-row"><span class="contact-label">Telefon</span><span class="contact-val"><a href="tel:+491631694817">+49 163 169 4817</a></span></div>
+          <div class="contact-row"><span class="contact-label">Post</span><span class="contact-val">Norvia Solutions, Glonner Str. 7a, 85640 Putzbrunn</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="font-size:1.1rem">Norvia <span>Solutions</span></div>
+        <p>Remote Recruiting für den deutschen Markt. Spezialisiert auf IT, Cyber Security, SAP und Logistik.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Leistungen</h5>
+        <a href="cyber-security.html">Cyber Security</a>
+        <a href="it-devops.html">IT & DevOps</a>
+        <a href="sap.html">SAP</a>
+        <a href="transport-logistik.html">Transport & Logistik</a>
+      </div>
+      <div class="footer-col">
+        <h5>Rechtliches</h5>
+        <a href="ueber-uns.html#impressum">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="ueber-uns.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Norvia Solutions. Alle Rechte vorbehalten.</p>
+      <p>DSGVO-konform · Made in Germany</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open')}
+
+const sections = document.querySelectorAll('.dsg-section');
+const sidebarLinks = document.querySelectorAll('.sidebar-link');
+window.addEventListener('scroll', ()=>{
+  let current = '';
+  sections.forEach(s=>{
+    if(window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  sidebarLinks.forEach(l=>{
+    l.classList.remove('active');
+    if(l.getAttribute('href') === '#'+current) l.classList.add('active');
+  });
+});
+</script>
+</body>
+</html>
